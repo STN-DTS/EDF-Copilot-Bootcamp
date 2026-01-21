@@ -1,0 +1,767 @@
+openapi: 3.1.0
+info:
+  title: Order Management API
+  description: |
+    REST API for the Order Management System.
+    
+    ## Authentication
+    All endpoints require Bearer token authentication using OAuth 2.0 / OIDC.
+    Include the token in the `Authorization` header: `Bearer <token>`
+    
+    ## Error Handling
+    All error responses use RFC 7807 Problem Details format.
+    Content-Type: `application/problem+json`
+    
+    ## Pagination
+    List endpoints support pagination via `page` and `size` query parameters.
+    Response includes a `page` object with pagination metadata.
+    
+  version: 1.0.0
+  contact:
+    name: Order Management Team
+    email: ordermgmt@example.com
+  license:
+    name: Internal Use Only
+    
+servers:
+  - url: /api/v1
+    description: API v1 (current)
+
+tags:
+  - name: Orders
+    description: Order management operations
+  - name: Customers
+    description: Customer information
+  - name: Items
+    description: Item catalog
+
+security:
+  - bearerAuth: []
+
+paths:
+  /orders:
+    get:
+      summary: List orders
+      description: Returns a paginated list of orders for the authenticated customer
+      operationId: listOrders
+      tags:
+        - Orders
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/SizeParam'
+        - name: status
+          in: query
+          description: Filter by order status
+          required: false
+          schema:
+            $ref: '#/components/schemas/OrderStatus'
+        - name: sort
+          in: query
+          description: Sort field and direction (e.g., createdAt,desc)
+          required: false
+          schema:
+            type: string
+            default: createdAt,desc
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderPage'
+              example:
+                content:
+                  - id: 12345
+                    customerId: 67890
+                    status: CREATED
+                    items:
+                      - id: 1
+                        itemId: 101
+                        quantity: 2
+                        unitPrice: "29.99"
+                        lineTotal: "59.98"
+                    totalAmount: "59.98"
+                    createdAt: "2026-01-20T10:30:00Z"
+                    updatedAt: "2026-01-20T10:30:00Z"
+                page:
+                  number: 0
+                  size: 20
+                  totalElements: 1
+                  totalPages: 1
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+    
+    post:
+      summary: Create order
+      description: Creates a new order for the authenticated customer
+      operationId: createOrder
+      tags:
+        - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+            example:
+              customerId: 67890
+              items:
+                - itemId: 101
+                  quantity: 2
+                - itemId: 102
+                  quantity: 1
+      responses:
+        '201':
+          description: Order created successfully
+          headers:
+            Location:
+              description: URI of the created order
+              schema:
+                type: string
+                example: /api/v1/orders/12345
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /orders/{id}:
+    get:
+      summary: Get order by ID
+      description: Returns a single order by its ID
+      operationId: getOrderById
+      tags:
+        - Orders
+      parameters:
+        - $ref: '#/components/parameters/OrderIdParam'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /orders/{id}/cancel:
+    put:
+      summary: Cancel order
+      description: |
+        Cancels an order. Only orders in CREATED status can be cancelled.
+        
+        Business Rule BR-ORD-005: Orders can only be cancelled in CREATED status.
+      operationId: cancelOrder
+      tags:
+        - Orders
+      parameters:
+        - $ref: '#/components/parameters/OrderIdParam'
+      responses:
+        '200':
+          description: Order cancelled successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: Order cannot be cancelled (not in CREATED status)
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+              example:
+                type: /problems/conflict
+                title: Conflict
+                status: 409
+                detail: Order cannot be cancelled - current status is SHIPPED
+                instance: /api/v1/orders/12345/cancel
+                timestamp: "2026-01-20T10:30:00Z"
+                traceId: abc123def456
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /customers/{id}:
+    get:
+      summary: Get customer by ID
+      description: Returns customer information
+      operationId: getCustomerById
+      tags:
+        - Customers
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Customer ID
+          schema:
+            type: integer
+            format: int64
+            example: 67890
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /items:
+    get:
+      summary: List available items
+      description: Returns a paginated list of available items from the catalog
+      operationId: listItems
+      tags:
+        - Items
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/SizeParam'
+        - name: status
+          in: query
+          description: Filter by item status
+          required: false
+          schema:
+            $ref: '#/components/schemas/ItemStatus'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemPage'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /items/{id}:
+    get:
+      summary: Get item by ID
+      description: Returns a single item from the catalog
+      operationId: getItemById
+      tags:
+        - Items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Item ID
+          schema:
+            type: integer
+            format: int64
+            example: 101
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth 2.0 / OIDC Bearer token
+
+  parameters:
+    PageParam:
+      name: page
+      in: query
+      description: Page number (0-indexed)
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+        example: 0
+    
+    SizeParam:
+      name: size
+      in: query
+      description: Number of items per page
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+        example: 20
+    
+    OrderIdParam:
+      name: id
+      in: path
+      required: true
+      description: Order ID
+      schema:
+        type: integer
+        format: int64
+        example: 12345
+
+  schemas:
+    # ==================== Order Schemas ====================
+    
+    Order:
+      type: object
+      description: An order placed by a customer
+      required:
+        - id
+        - customerId
+        - status
+        - items
+        - totalAmount
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique order identifier
+          example: 12345
+        customerId:
+          type: integer
+          format: int64
+          description: Customer who placed the order
+          example: 67890
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        items:
+          type: array
+          description: Line items in the order
+          minItems: 1
+          maxItems: 50
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        totalAmount:
+          type: string
+          pattern: '^\d+\.\d{2}$'
+          description: Total order amount with 2 decimal places
+          example: "109.97"
+        createdAt:
+          type: string
+          format: date-time
+          description: Order creation timestamp (UTC)
+          example: "2026-01-20T10:30:00Z"
+        updatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp (UTC)
+          example: "2026-01-20T10:30:00Z"
+    
+    OrderItem:
+      type: object
+      description: A single line item within an order
+      required:
+        - id
+        - itemId
+        - quantity
+        - unitPrice
+        - lineTotal
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique line item identifier
+          example: 1
+        itemId:
+          type: integer
+          format: int64
+          description: Reference to catalog item
+          example: 101
+        quantity:
+          type: integer
+          minimum: 1
+          maximum: 999
+          description: Number of items ordered
+          example: 2
+        unitPrice:
+          type: string
+          pattern: '^\d+\.\d{2}$'
+          description: Price per unit at order time
+          example: "29.99"
+        lineTotal:
+          type: string
+          pattern: '^\d+\.\d{2}$'
+          description: Calculated line total (quantity × unitPrice)
+          example: "59.98"
+    
+    OrderStatus:
+      type: string
+      description: Order lifecycle status
+      enum:
+        - CREATED
+        - PROCESSING
+        - SHIPPED
+        - DELIVERED
+        - CANCELLED
+      example: CREATED
+    
+    CreateOrderRequest:
+      type: object
+      description: Request body for creating a new order
+      required:
+        - customerId
+        - items
+      properties:
+        customerId:
+          type: integer
+          format: int64
+          description: Customer placing the order
+          example: 67890
+        items:
+          type: array
+          description: Items to include in the order
+          minItems: 1
+          maxItems: 50
+          items:
+            $ref: '#/components/schemas/OrderItemRequest'
+    
+    OrderItemRequest:
+      type: object
+      description: Item to add to an order
+      required:
+        - itemId
+        - quantity
+      properties:
+        itemId:
+          type: integer
+          format: int64
+          description: Catalog item ID
+          example: 101
+        quantity:
+          type: integer
+          minimum: 1
+          maximum: 999
+          description: Quantity to order
+          example: 2
+    
+    OrderPage:
+      type: object
+      description: Paginated list of orders
+      required:
+        - content
+        - page
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+        page:
+          $ref: '#/components/schemas/PageInfo'
+    
+    # ==================== Customer Schemas ====================
+    
+    Customer:
+      type: object
+      description: A customer who places orders
+      required:
+        - id
+        - name
+        - email
+        - status
+        - createdAt
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique customer identifier
+          example: 67890
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          description: Customer display name
+          example: "Jane Smith"
+        email:
+          type: string
+          format: email
+          description: Customer email address
+          example: "jane@example.com"
+        status:
+          $ref: '#/components/schemas/CustomerStatus'
+        createdAt:
+          type: string
+          format: date-time
+          description: Account creation timestamp (UTC)
+          example: "2025-06-15T09:00:00Z"
+    
+    CustomerStatus:
+      type: string
+      description: Customer account status
+      enum:
+        - ACTIVE
+        - INACTIVE
+        - SUSPENDED
+      example: ACTIVE
+    
+    # ==================== Item Schemas ====================
+    
+    Item:
+      type: object
+      description: A product or service available for ordering
+      required:
+        - id
+        - sku
+        - name
+        - price
+        - status
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Unique item identifier
+          example: 101
+        sku:
+          type: string
+          description: Stock keeping unit
+          example: "WIDGET-001"
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+          description: Item display name
+          example: "Premium Widget"
+        description:
+          type: string
+          maxLength: 2000
+          description: Item description
+          example: "A high-quality widget for all your widget needs"
+        price:
+          type: string
+          pattern: '^\d+\.\d{2}$'
+          description: Current price with 2 decimal places
+          example: "29.99"
+        status:
+          $ref: '#/components/schemas/ItemStatus'
+    
+    ItemStatus:
+      type: string
+      description: Item availability status
+      enum:
+        - AVAILABLE
+        - OUT_OF_STOCK
+        - DISCONTINUED
+      example: AVAILABLE
+    
+    ItemPage:
+      type: object
+      description: Paginated list of items
+      required:
+        - content
+        - page
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+        page:
+          $ref: '#/components/schemas/PageInfo'
+    
+    # ==================== Common Schemas ====================
+    
+    PageInfo:
+      type: object
+      description: Pagination metadata
+      required:
+        - number
+        - size
+        - totalElements
+        - totalPages
+      properties:
+        number:
+          type: integer
+          description: Current page number (0-indexed)
+          example: 0
+        size:
+          type: integer
+          description: Number of items per page
+          example: 20
+        totalElements:
+          type: integer
+          description: Total number of items
+          example: 142
+        totalPages:
+          type: integer
+          description: Total number of pages
+          example: 8
+    
+    # ==================== Error Schemas ====================
+    
+    ProblemDetail:
+      type: object
+      description: RFC 7807 Problem Details for HTTP APIs
+      required:
+        - type
+        - title
+        - status
+        - detail
+        - instance
+      properties:
+        type:
+          type: string
+          format: uri
+          description: URI identifying the problem type
+          example: "/problems/validation-error"
+        title:
+          type: string
+          description: Short human-readable summary
+          example: "Validation Error"
+        status:
+          type: integer
+          description: HTTP status code
+          example: 400
+        detail:
+          type: string
+          description: Human-readable explanation of the error
+          example: "The request contains invalid data"
+        instance:
+          type: string
+          format: uri
+          description: URI of the specific occurrence
+          example: "/api/v1/orders"
+        timestamp:
+          type: string
+          format: date-time
+          description: When the error occurred (UTC)
+          example: "2026-01-20T10:30:00Z"
+        traceId:
+          type: string
+          description: Correlation ID for debugging
+          example: "abc123def456"
+        errors:
+          type: array
+          description: Field-level validation errors
+          items:
+            $ref: '#/components/schemas/FieldError'
+    
+    FieldError:
+      type: object
+      description: A single field validation error
+      required:
+        - field
+        - code
+        - message
+      properties:
+        field:
+          type: string
+          description: Field that failed validation
+          example: "items"
+        code:
+          type: string
+          description: Error code
+          example: "SIZE_MIN"
+        message:
+          type: string
+          description: Human-readable error message
+          example: "Order must contain at least one item"
+
+  responses:
+    ValidationError:
+      description: Validation error - request contains invalid data
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+          example:
+            type: /problems/validation-error
+            title: Validation Error
+            status: 400
+            detail: The request contains invalid data
+            instance: /api/v1/orders
+            timestamp: "2026-01-20T10:30:00Z"
+            traceId: abc123def456
+            errors:
+              - field: items
+                code: SIZE_MIN
+                message: Order must contain at least one item
+    
+    Unauthorized:
+      description: Authentication required
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+          example:
+            type: /problems/authentication-required
+            title: Authentication Required
+            status: 401
+            detail: Valid authentication credentials are required
+            instance: /api/v1/orders
+            timestamp: "2026-01-20T10:30:00Z"
+            traceId: abc123def456
+    
+    Forbidden:
+      description: Access denied
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+          example:
+            type: /problems/access-denied
+            title: Access Denied
+            status: 403
+            detail: You do not have permission to access this resource
+            instance: /api/v1/orders/12345
+            timestamp: "2026-01-20T10:30:00Z"
+            traceId: abc123def456
+    
+    NotFound:
+      description: Resource not found
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+          example:
+            type: /problems/not-found
+            title: Resource Not Found
+            status: 404
+            detail: Order with ID 12345 not found
+            instance: /api/v1/orders/12345
+            timestamp: "2026-01-20T10:30:00Z"
+            traceId: abc123def456
+    
+    InternalError:
+      description: Internal server error
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetail'
+          example:
+            type: /problems/internal-error
+            title: Internal Error
+            status: 500
+            detail: An unexpected error occurred
+            instance: /api/v1/orders
+            timestamp: "2026-01-20T10:30:00Z"
+            traceId: abc123def456

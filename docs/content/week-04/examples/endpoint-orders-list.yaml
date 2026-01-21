@@ -1,0 +1,327 @@
+# GET /api/v1/orders - List Orders with Pagination and Filtering
+# Complete OpenAPI specification example for Week 4
+
+openapi: 3.1.0
+info:
+  title: Order Management API - Orders List Endpoint
+  version: 1.0.0
+  description: Example specification for the List Orders endpoint
+
+paths:
+  /api/v1/orders:
+    get:
+      operationId: listOrders
+      summary: List all orders
+      description: |
+        Retrieve a paginated list of orders for the authenticated user.
+        Supports filtering by status, date range, and customer.
+        Results are sorted by creation date descending by default.
+      tags:
+        - Orders
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: Page number (0-indexed)
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+          example: 0
+        - name: size
+          in: query
+          description: Number of items per page
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+          example: 20
+        - name: sort
+          in: query
+          description: Sort field and direction (field,direction)
+          required: false
+          schema:
+            type: string
+            default: createdAt,desc
+          examples:
+            default:
+              value: createdAt,desc
+              summary: Newest first
+            oldest:
+              value: createdAt,asc
+              summary: Oldest first
+            total:
+              value: total,desc
+              summary: Highest total first
+        - name: status
+          in: query
+          description: Filter by order status
+          required: false
+          schema:
+            $ref: '#/components/schemas/OrderStatus'
+          example: Pending
+        - name: customerId
+          in: query
+          description: Filter by customer ID
+          required: false
+          schema:
+            type: string
+            format: uuid
+          example: 7c9e6679-7425-40de-944b-e07fc1f90ae7
+        - name: fromDate
+          in: query
+          description: Filter orders created on or after this date
+          required: false
+          schema:
+            type: string
+            format: date
+          example: "2026-01-01"
+        - name: toDate
+          in: query
+          description: Filter orders created on or before this date
+          required: false
+          schema:
+            type: string
+            format: date
+          example: "2026-01-31"
+      responses:
+        '200':
+          description: Paginated list of orders
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderPage'
+              example:
+                content:
+                  - id: "550e8400-e29b-41d4-a716-446655440000"
+                    customerId: "7c9e6679-7425-40de-944b-e07fc1f90ae7"
+                    status: "Pending"
+                    total: 74.98
+                    itemCount: 2
+                    createdAt: "2026-01-20T10:30:00Z"
+                    updatedAt: "2026-01-20T10:30:00Z"
+                  - id: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+                    customerId: "7c9e6679-7425-40de-944b-e07fc1f90ae7"
+                    status: "Shipped"
+                    total: 49.99
+                    itemCount: 1
+                    createdAt: "2026-01-19T14:00:00Z"
+                    updatedAt: "2026-01-20T09:00:00Z"
+                page:
+                  number: 0
+                  size: 20
+                  totalElements: 42
+                  totalPages: 3
+        '400':
+          description: Invalid request parameters
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+              example:
+                type: "https://api.example.com/errors/validation-error"
+                title: "Validation Error"
+                status: 400
+                detail: "Invalid date format for 'fromDate'"
+                instance: "/api/v1/orders"
+                traceId: "abc123def456"
+                violations:
+                  - field: "fromDate"
+                    message: "must be a valid date in format YYYY-MM-DD"
+        '401':
+          description: Authentication required
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+              example:
+                type: "https://api.example.com/errors/unauthorized"
+                title: "Unauthorized"
+                status: 401
+                detail: "Authentication token is missing or invalid"
+                instance: "/api/v1/orders"
+        '500':
+          description: Internal server error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetail'
+              example:
+                type: "https://api.example.com/errors/internal-error"
+                title: "Internal Server Error"
+                status: 500
+                detail: "An unexpected error occurred. Please try again later."
+                instance: "/api/v1/orders"
+                traceId: "xyz789abc012"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained from authentication service
+
+  schemas:
+    OrderPage:
+      type: object
+      description: Paginated response containing orders
+      required:
+        - content
+        - page
+      properties:
+        content:
+          type: array
+          description: List of orders on this page
+          items:
+            $ref: '#/components/schemas/OrderSummary'
+        page:
+          $ref: '#/components/schemas/PageInfo'
+
+    OrderSummary:
+      type: object
+      description: Summary view of an order for list display
+      required:
+        - id
+        - customerId
+        - status
+        - total
+        - itemCount
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique order identifier
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        customerId:
+          type: string
+          format: uuid
+          description: Customer who placed the order
+          example: "7c9e6679-7425-40de-944b-e07fc1f90ae7"
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        total:
+          type: number
+          format: decimal
+          minimum: 0
+          description: Order total amount
+          example: 74.98
+        itemCount:
+          type: integer
+          minimum: 1
+          maximum: 100
+          description: Number of line items in the order
+          example: 2
+        createdAt:
+          type: string
+          format: date-time
+          description: When the order was created
+          example: "2026-01-20T10:30:00Z"
+        updatedAt:
+          type: string
+          format: date-time
+          description: When the order was last modified
+          example: "2026-01-20T10:30:00Z"
+
+    PageInfo:
+      type: object
+      description: Pagination metadata
+      required:
+        - number
+        - size
+        - totalElements
+        - totalPages
+      properties:
+        number:
+          type: integer
+          minimum: 0
+          description: Current page number (0-indexed)
+          example: 0
+        size:
+          type: integer
+          minimum: 1
+          maximum: 100
+          description: Number of items per page
+          example: 20
+        totalElements:
+          type: integer
+          minimum: 0
+          description: Total number of items across all pages
+          example: 42
+        totalPages:
+          type: integer
+          minimum: 0
+          description: Total number of pages
+          example: 3
+
+    OrderStatus:
+      type: string
+      description: Current lifecycle status of an order
+      enum:
+        - Pending
+        - Confirmed
+        - Shipped
+        - Delivered
+        - Cancelled
+      example: Pending
+
+    ProblemDetail:
+      type: object
+      description: RFC 7807 Problem Details for HTTP APIs
+      required:
+        - type
+        - title
+        - status
+      properties:
+        type:
+          type: string
+          format: uri
+          description: URI reference identifying the problem type
+          example: "https://api.example.com/errors/not-found"
+        title:
+          type: string
+          description: Short, human-readable summary of the problem
+          example: "Not Found"
+        status:
+          type: integer
+          description: HTTP status code
+          example: 404
+        detail:
+          type: string
+          description: Human-readable explanation specific to this occurrence
+          example: "Order ORD-12345 was not found"
+        instance:
+          type: string
+          description: URI reference identifying the specific occurrence
+          example: "/api/v1/orders/ORD-12345"
+        traceId:
+          type: string
+          description: Correlation ID for debugging
+          example: "abc123def456"
+        violations:
+          type: array
+          description: Validation errors (for 400 responses)
+          items:
+            $ref: '#/components/schemas/Violation'
+
+    Violation:
+      type: object
+      description: A single validation error
+      required:
+        - field
+        - message
+      properties:
+        field:
+          type: string
+          description: Name of the field with the error
+          example: "customerId"
+        message:
+          type: string
+          description: Description of the validation error
+          example: "must not be null"
