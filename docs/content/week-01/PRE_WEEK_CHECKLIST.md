@@ -17,6 +17,7 @@
 - [ ] Access to organization repo/branch
 
 ## Test Your Setup
+<!-- Updated commands to better specify the user should be testing that they have these tools working on their system, rather than testing against an application which is what the previous commands were doing. This simplifies verification and ensures the environment is correctly set up. -->
 - [ ] Run `mvn -v` (backend)
 - [ ] Run `node -v` (frontend)
 - [ ] Run `npm -v` (frontend)
