@@ -47,7 +47,6 @@ Example: `/working/frontend/jsmith_20260120_1430/`
 ### Step 3: Open a Pull Request
 - Use the PR template at `.github/pull_request_template.md`
 - Ensure all checklist items are completed
-<!-- Not sure what this means -->
 - Reference this lab in the "Related Lab/Feature" section
 
 ### Example Folder Structure
