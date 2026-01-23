@@ -13,9 +13,9 @@ Prove your local environment + Copilot are ready, and produce a tiny PR that fol
 ## Steps
 1) Confirm Copilot works in your IDE (completion + chat).
 2) Pull the training branch/repo.
-<!-- Discrepancy: Step 3 says to make a tiny change but Step 2 of Submission section says to create a new README file. Maybe add "Create a new README file" as Step 3 and shift the others down. -->
+<!-- Discrepancy: Step 3 says to make a tiny change but Step 2 of Submission section says to create a new README file. Maybe add "Create a new README file" as Step 3 and shift the others down. I am not sure what helpers would be made as there is no code at this point in the bootcamp to make a helper for. -->
 3) Make a tiny change (e.g., update a README line, add a small helper, fix a lint warning).
-<!--  Why would they need to use a Plan prompt to make a tiny change? Can't they just use agent mode directly? This language is also confusing for new AI users. Also, there is no code to change yet, which creates confusion. Additionally, should this step not be before the "Make a tiny change" step? -->
+<!--  Why would they need to use a Plan prompt to make a tiny change? Can't they just use agent mode directly? This language ("Use Prompt P0") likely won't make sense to new AI users. Also, there is no code to change yet, which creates confusion. Additionally, should this step not be before or combined with the "Make a tiny change" step? -->
 4) Use Prompt P0 (Plan only) to get a plan before changing code.
 5) Commit and open a PR using the PR template checklist.
 
