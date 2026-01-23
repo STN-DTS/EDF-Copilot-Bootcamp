@@ -13,15 +13,19 @@ Prove your local environment + Copilot are ready, and produce a tiny PR that fol
 ## Steps
 1) Confirm Copilot works in your IDE (completion + chat).
 2) Pull the training branch/repo.
-3) Run build + tests (record commands used).
-4) Make a tiny change (e.g., update a README line, add a small helper, fix a lint warning).
-5) Use Prompt P0 (Plan only) to get a plan before changing code.
-6) Commit and open a PR using the PR template checklist.
+<!-- Discrepancy: Step 3 says to make a tiny change but Step 2 of Submission section says to create a new README file. Maybe add "Create a new README file" as Step 3 and shift the others down. -->
+3) Make a tiny change (e.g., update a README line, add a small helper, fix a lint warning).
+<!--  Why would they need to use a Plan prompt to make a tiny change? Can't they just use agent mode directly? This language is also confusing for new AI users. Also, there is no code to change yet, which creates confusion. Additionally, should this step not be before the "Make a tiny change" step? -->
+4) Use Prompt P0 (Plan only) to get a plan before changing code.
+5) Commit and open a PR using the PR template checklist.
 
 ## Success Criteria
 - PR opened
-- Build/tests passed
-- PR summary includes verification commands
+- Your newly created README in your working directory includes:
+  - Your name and date
+  - Lab number: **Lab 0**
+  - Verification commands and outputs
+  - Brief description of your actions in this lab
 
 ---
 
@@ -34,29 +38,29 @@ Prove your local environment + Copilot are ready, and produce a tiny PR that fol
 Example: `/working/frontend/jsmith_20260120_1430/`
 
 ### Step 2: Include Required Files
-- All new/changed files for this lab
-- A `README.md` containing:
+- A `README.md` in your new working folder containing:
   - Your name and date
   - Lab number: **Lab 0**
-  - Brief description of what you did
-  - Verification commands run and their output summary
+  - Verification commands from the [Pre-Week Checklist](../PRE_WEEK_CHECKLIST.md) and their output summary
+  - Brief description of what you did in this lab
 
 ### Step 3: Open a Pull Request
 - Use the PR template at `.github/pull_request_template.md`
 - Ensure all checklist items are completed
+<!-- Not sure what this means -->
 - Reference this lab in the "Related Lab/Feature" section
 
 ### Example Folder Structure
 ```
 /working/frontend/jsmith_20260120_1430/
 ├── README.md
-└── (your lab files)
 ```
 
 > 📁 **Reference:** See `/working/frontend/example_lab0/` or `/working/backend/example_lab0/` for example submissions.
 
 ---
 
+<!-- I don't think this section is necessary in this lab since this is just setup and little insight will be gleaned from it with how basic this lab is -->
 ## Quick Reflection (2 min)
 Before submitting, answer in your README:
 - What worked well during setup?
