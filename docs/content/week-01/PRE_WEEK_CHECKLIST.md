@@ -17,11 +17,14 @@
 - [ ] Access to organization repo/branch
 
 ## Test Your Setup
-- [ ] Run `./mvnw clean test` (backend)
-- [ ] Run `npm install && npm run test` (frontend)
+<!-- Updated commands to better specify the user should be testing that they have these tools working on their system, rather than testing against an application which is what the previous commands were doing. This simplifies verification and ensures the environment is correctly set up. -->
+- [ ] Run `mvn -v` (backend)
+- [ ] Run `node -v` (frontend)
+- [ ] Run `npm -v` (frontend)
 - [ ] Run `docker --version` (if using Testcontainers)
 - [ ] Run `oc version` (if using OpenShift)
 
+<!-- Not sure what this means in the context of the PRE_WEEK_CHECKLIST -->
 ## Who to Contact if Blocked
 - [ ] List team lead and support contacts here
 

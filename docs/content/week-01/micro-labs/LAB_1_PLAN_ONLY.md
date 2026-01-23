@@ -11,6 +11,7 @@ Train "plan-first" prompting discipline. This is the foundation of safe AI-assis
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md) — focus on P0 (Plan only)
 
 ## Task
+<!-- Will there be an existing application to improve? -->
 Pick a small improvement request (provided by lead) and do:
 - Copilot plan only
 - Human review of plan
@@ -45,6 +46,7 @@ Example: `/working/backend/jsmith_20260120_1530/`
   - Lab number: **Lab 1**
   - The plan you approved (or link to `PLAN.md`)
   - What you changed from the original plan (if anything)
+  <!-- What verification commands specifically?-->
   - Verification commands run and results
 
 ### Step 3: Open a Pull Request
