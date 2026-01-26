@@ -9,6 +9,7 @@
 ## Sprint 1 Outcomes
 
 By end of sprint, the team has:
+
 - ✅ End-to-end pipeline working
 - ✅ Auth flow implemented
 - ✅ Core journey functional
@@ -30,41 +31,41 @@ By end of sprint, the team has:
 
 ## Deliverables Checklist
 
-| Deliverable | Status | Location |
-|-------------|--------|----------|
-| Sprint 1 Program | ✅ Ready | [SPRINT_1_PROGRAM.md](./SPRINT_1_PROGRAM.md) |
-| Sprint Packet | ✅ Ready | [sprint-packet/SPRINT_PACKET.md](./sprint-packet/SPRINT_PACKET.md) |
-| FE Task Breakdown | ✅ Ready | [sprint-packet/FE_TASKS.md](./sprint-packet/FE_TASKS.md) |
-| BE Task Breakdown | ✅ Ready | [sprint-packet/BE_TASKS.md](./sprint-packet/BE_TASKS.md) |
+| Deliverable       | Status   | Location                                                           |
+| ----------------- | -------- | ------------------------------------------------------------------ |
+| Sprint 1 Program  | ✅ Ready | [SPRINT_1_PROGRAM.md](./SPRINT_1_PROGRAM.md)                       |
+| Sprint Packet     | ✅ Ready | [sprint-packet/SPRINT_PACKET.md](./sprint-packet/SPRINT_PACKET.md) |
+| FE Task Breakdown | ✅ Ready | [sprint-packet/FE_TASKS.md](./sprint-packet/FE_TASKS.md)           |
+| BE Task Breakdown | ✅ Ready | [sprint-packet/BE_TASKS.md](./sprint-packet/BE_TASKS.md)           |
 
 ---
 
 ## Sprint 1 Schedule
 
-| Week | Days | Focus | Deliverables |
-|------|------|-------|--------------|
-| Week 5 | 1 | Sprint Planning | Team committed, tasks assigned |
-| Week 5 | 2-3 | Foundation | App shells, auth config |
-| Week 5 | 4-5 | Core Flow | Primary journey, persistence |
-| Week 6 | 6-7 | Integration | Real API, error handling |
-| Week 6 | 8-9 | Testing | Unit, integration, E2E |
-| Week 6 | 10 | Demo | Sprint demo + retrospective |
+| Week   | Days | Focus           | Deliverables                   |
+| ------ | ---- | --------------- | ------------------------------ |
+| Week 5 | 1    | Sprint Planning | Team committed, tasks assigned |
+| Week 5 | 2-3  | Foundation      | App shells, auth config        |
+| Week 5 | 4-5  | Core Flow       | Primary journey, persistence   |
+| Week 6 | 6-7  | Integration     | Real API, error handling       |
+| Week 6 | 8-9  | Testing         | Unit, integration, E2E         |
+| Week 6 | 10   | Demo            | Sprint demo + retrospective    |
 
 ---
 
 ## Key Prompts
 
-| ID | Name | Purpose |
-|----|------|---------|
-| P0 | Plan Only | Plan before implementing |
-| P1 | Feature Scaffold | Scaffold new components |
-| P2 | Tests-First | Write tests before/with code |
-| P6 | Repository | Create data access layer |
-| P7 | Service Layer | Create business logic |
-| P8 | Controller | Create REST endpoints |
-| P9 | Route Scaffold | Create React Router routes |
-| P21 | Contract Validation | Validate API compliance |
-| P22 | Mock Handler | Generate MSW handlers |
+| ID  | Name                | Purpose                      |
+| --- | ------------------- | ---------------------------- |
+| P0  | Plan Only           | Plan before implementing     |
+| P1  | Feature Scaffold    | Scaffold new components      |
+| P2  | Tests-First         | Write tests before/with code |
+| P6  | Repository          | Create data access layer     |
+| P7  | Service Layer       | Create business logic        |
+| P8  | Controller          | Create REST endpoints        |
+| P9  | Route Scaffold      | Create React Router routes   |
+| P21 | Contract Validation | Validate API compliance      |
+| P22 | Mock Handler        | Generate MSW handlers        |
 
 ---
 
@@ -72,17 +73,17 @@ By end of sprint, the team has:
 
 Every sprint must start with an approved Sprint Packet:
 
-| Section | Content |
-|---------|---------|
-| Goal | What success looks like |
-| Definition of Done | Specific completion criteria |
-| In-Scope Files/Paths | Exactly what can be touched |
-| Contract References | Endpoints/schemas to implement |
-| Acceptance Criteria | Testable requirements |
-| Logging/Audit | Required events to log |
-| Security Checklist | Auth, validation, data handling |
-| Test Requirements | Unit, integration, e2e expectations |
-| Out of Scope | What is explicitly excluded |
+| Section              | Content                             |
+| -------------------- | ----------------------------------- |
+| Goal                 | What success looks like             |
+| Definition of Done   | Specific completion criteria        |
+| In-Scope Files/Paths | Exactly what can be touched         |
+| Contract References  | Endpoints/schemas to implement      |
+| Acceptance Criteria  | Testable requirements               |
+| Logging/Audit        | Required events to log              |
+| Security Checklist   | Auth, validation, data handling     |
+| Test Requirements    | Unit, integration, e2e expectations |
+| Out of Scope         | What is explicitly excluded         |
 
 ---
 
@@ -90,29 +91,29 @@ Every sprint must start with an approved Sprint Packet:
 
 ### Frontend Stream (Weeks 5-6)
 
-| Week | Task | Deliverable |
-|------|------|-------------|
-| 5 | Project structure + routing | App shell with navigation |
-| 5 | Layout components | Header, footer, error boundary |
-| 5 | First journey UI | Order List, Order Detail |
-| 5 | MSW integration | Journey working against mocks |
-| 6 | Real API integration | Switch to backend |
-| 6 | Error handling | Problem Details display |
-| 6 | Component tests | Vitest + RTL tests |
-| 6 | E2E skeleton | Playwright basics |
+| Week | Task                        | Deliverable                    |
+| ---- | --------------------------- | ------------------------------ |
+| 5    | Project structure + routing | App shell with navigation      |
+| 5    | Layout components           | Header, footer, error boundary |
+| 5    | First journey UI            | Order List, Order Detail       |
+| 5    | MSW integration             | Journey working against mocks  |
+| 6    | Real API integration        | Switch to backend              |
+| 6    | Error handling              | Problem Details display        |
+| 6    | Component tests             | Vitest + RTL tests             |
+| 6    | E2E skeleton                | Playwright basics              |
 
 ### Backend Stream (Weeks 5-6)
 
-| Week | Task | Deliverable |
-|------|------|-------------|
-| 5 | Project structure + config | Spring Boot skeleton |
-| 5 | Auth implementation | OAuth/OIDC working |
-| 5 | Core endpoints | List + detail controllers |
-| 5 | Persistence | JPA entities + repository |
-| 6 | Service layer | Business logic |
-| 6 | Error handling + logging | Problem Details, structured logs |
-| 6 | Unit tests | Service layer tests |
-| 6 | Integration + contract tests | API validation |
+| Week | Task                         | Deliverable                      |
+| ---- | ---------------------------- | -------------------------------- |
+| 5    | Project structure + config   | Spring Boot skeleton             |
+| 5    | Auth implementation          | OAuth/OIDC working               |
+| 5    | Core endpoints               | List + detail controllers        |
+| 5    | Persistence                  | JPA entities + repository        |
+| 6    | Service layer                | Business logic                   |
+| 6    | Error handling + logging     | Problem Details, structured logs |
+| 6    | Unit tests                   | Service layer tests              |
+| 6    | Integration + contract tests | API validation                   |
 
 ---
 
@@ -133,14 +134,14 @@ sprint-01/
 
 ## Copilot Usage Focus
 
-| Use Case | Prompt Reference |
-|----------|------------------|
-| Scaffold modules/components | P1 (Feature Scaffold) |
-| Generate from acceptance criteria | P2 (Tests-First) |
-| Create React Router routes | P9 (Route Scaffold) |
-| Create Spring Boot layers | P6, P7, P8 |
-| Validate contract compliance | P21 (Contract Validation) |
-| Generate MSW handlers | P22 (Mock Handler) |
+| Use Case                          | Prompt Reference          |
+| --------------------------------- | ------------------------- |
+| Scaffold modules/components       | P1 (Feature Scaffold)     |
+| Generate from acceptance criteria | P2 (Tests-First)          |
+| Create React Router routes        | P9 (Route Scaffold)       |
+| Create Spring Boot layers         | P6, P7, P8                |
+| Validate contract compliance      | P21 (Contract Validation) |
+| Generate MSW handlers             | P22 (Mock Handler)        |
 
 ---
 
@@ -163,18 +164,18 @@ sprint-01/
 
 ## Standing Rituals (During Sprint)
 
-| Ritual | Frequency | Duration |
-|--------|-----------|----------|
-| Contract Council | Weekly | 30 min |
-| Architecture Sync | 2x weekly | 20 min |
-| Daily Dev Block | Daily | 15 min |
+| Ritual            | Frequency | Duration |
+| ----------------- | --------- | -------- |
+| Contract Council  | Weekly    | 30 min   |
+| Architecture Sync | 2x weekly | 20 min   |
+| Daily Dev Block   | Daily     | 15 min   |
 
 ---
 
 ## Navigation
 
-| Previous | Next |
-|----------|------|
+| Previous                                       | Next                                              |
+| ---------------------------------------------- | ------------------------------------------------- |
 | [Week 4: Contract-First](../week-04/README.md) | [Sprint 2: Expand + NFRs](../sprint-02/README.md) |
 
 ---
@@ -197,3 +198,11 @@ Remember:
 
 "No Sprint Packet, No Build"
 ```
+
+---
+
+## Navigation
+
+| Previous                         | Home                                         | Next                                 |
+| -------------------------------- | -------------------------------------------- | ------------------------------------ |
+| [← Week 4](../week-04/README.md) | [Master Index](../../../.MASTER_BOOTCAMP.md) | [Sprint 2 →](../sprint-02/README.md) |

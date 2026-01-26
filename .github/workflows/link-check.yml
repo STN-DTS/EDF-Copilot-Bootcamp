@@ -1,0 +1,45 @@
+name: Markdown Link Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.md'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    name: Check Markdown Links
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+
+      - name: Check links in all markdown files
+        run: |
+          echo "🔍 Checking markdown links..."
+
+          # Find all markdown files and check them
+          find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" | while read file; do
+            echo "Checking: $file"
+            markdown-link-check "$file" --config .github/markdown-link-check-config.json || true
+          done
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Link Check Complete" >> $GITHUB_STEP_SUMMARY
+          echo "Check the logs above for any broken links." >> $GITHUB_STEP_SUMMARY

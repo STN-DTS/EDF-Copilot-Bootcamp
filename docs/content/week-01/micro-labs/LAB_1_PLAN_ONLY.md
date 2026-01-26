@@ -1,28 +1,35 @@
 # Lab 1 — Plan Only (No code until plan approved)
 
 ## Goal
+
 Train "plan-first" prompting discipline. This is the foundation of safe AI-assisted development.
 
 ## Timebox
+
 20–30 minutes
 
 ## Prerequisites
+
 - Completed Lab 0
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md) — focus on P0 (Plan only)
 
 ## Task
+
 Pick a small improvement request (provided by lead) and do:
+
 - Copilot plan only
 - Human review of plan
 - Only then implement
 
 ## Steps
-1) Use Prompt P0.
-2) Ensure the plan includes: files, steps, risks, tests.
-3) If plan is missing anything, ask Copilot to revise the plan.
-4) Implement only after plan is approved.
+
+1. Use Prompt P0.
+2. Ensure the plan includes: files, steps, risks, tests.
+3. If plan is missing anything, ask Copilot to revise the plan.
+4. Implement only after plan is approved.
 
 ## Success Criteria
+
 - A plan that references repo patterns (not invented patterns)
 - Small diff
 - Tests/build verified
@@ -32,12 +39,15 @@ Pick a small improvement request (provided by lead) and do:
 ## Submission (MANDATORY)
 
 ### Step 1: Create Your Working Folder
+
 ```
 /working/{frontend|backend}/{your_name}_{YYYYMMDD_HHMM}/
 ```
+
 Example: `/working/backend/jsmith_20260120_1530/`
 
 ### Step 2: Include Required Files
+
 - Your Copilot-generated plan (save as `PLAN.md`)
 - All implementation files
 - A `README.md` containing:
@@ -48,11 +58,13 @@ Example: `/working/backend/jsmith_20260120_1530/`
   - Verification commands run and results
 
 ### Step 3: Open a Pull Request
+
 - Use the PR template at `.github/pull_request_template.md`
 - Ensure all checklist items are completed
 - Include your approved plan in the PR description
 
 ### Example Folder Structure
+
 ```
 /working/backend/jsmith_20260120_1530/
 ├── README.md
@@ -65,7 +77,17 @@ Example: `/working/backend/jsmith_20260120_1530/`
 ---
 
 ## Quick Reflection (2 min)
+
 Before submitting, answer in your README:
+
 - Did the plan help you stay focused?
 - What did Copilot miss in the initial plan?
 - How did you refine the plan before implementing?
+
+---
+
+## Navigation
+
+| Previous                  | Home                        | Next                                        |
+| ------------------------- | --------------------------- | ------------------------------------------- |
+| [← Lab 0](LAB_0_SETUP.md) | [Week 1 Home](../README.md) | [Lab 2 →](LAB_2_SCAFFOLD_VERTICAL_SLICE.md) |

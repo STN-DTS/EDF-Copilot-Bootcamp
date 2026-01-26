@@ -1,36 +1,44 @@
 # Lab 3 — Tests First
 
 ## Goal
+
 Turn acceptance criteria into tests, then code. This enforces the "proof culture" where tests drive implementation.
 
 ## Timebox
+
 60–90 minutes
 
 ## Prerequisites
+
 - Completed Labs 0–2
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md) — focus on P2 (Tests-first)
 - Review [Domain Context](../DOMAIN_CONTEXT.md) for business context
 
 ## Domain Context
+
 Use the **Order Management** domain from `docs/shared/reference-materials/DOMAIN_CONTEXT.md`. Your acceptance criteria should relate to Orders, Customers, or Items entities.
 
 ### Sample Acceptance Criteria (if lead doesn't provide)
+
 - Given an order ID, return the order with customer name and item list
 - Return 404 with Problem Details if order not found
 - Order total should be calculated from item prices
 - Orders can be filtered by status (pending, completed, cancelled)
 
 ## Inputs
+
 Lead provides 3–6 acceptance criteria bullets (or use samples above).
 
 ## Steps
-1) Use Prompt P2 (tests-first).
-2) Review the generated tests for correctness and realism.
-3) Fix the tests where needed (humans own quality).
-4) Implement minimal code to pass.
-5) Run full test suite.
+
+1. Use Prompt P2 (tests-first).
+2. Review the generated tests for correctness and realism.
+3. Fix the tests where needed (humans own quality).
+4. Implement minimal code to pass.
+5. Run full test suite.
 
 ## Success Criteria
+
 - Tests match acceptance criteria
 - Minimal code change to satisfy tests
 - PR includes test commands executed
@@ -40,12 +48,15 @@ Lead provides 3–6 acceptance criteria bullets (or use samples above).
 ## Submission (MANDATORY)
 
 ### Step 1: Create Your Working Folder
+
 ```
 /working/{frontend|backend}/{your_name}_{YYYYMMDD_HHMM}/
 ```
+
 Example: `/working/backend/jsmith_20260121_1400/`
 
 ### Step 2: Include Required Files
+
 - Test files (written BEFORE implementation)
 - Implementation files (minimal to pass tests)
 - A `README.md` containing:
@@ -56,11 +67,13 @@ Example: `/working/backend/jsmith_20260121_1400/`
   - Test commands run and results (pass/fail counts)
 
 ### Step 3: Open a Pull Request
+
 - Use the PR template at `.github/pull_request_template.md`
 - Ensure all checklist items are completed
 - Highlight which tests Copilot got right vs wrong
 
 ### Example Folder Structure
+
 ```
 /working/backend/jsmith_20260121_1400/
 ├── README.md
@@ -76,8 +89,17 @@ Example: `/working/backend/jsmith_20260121_1400/`
 ---
 
 ## Quick Reflection (2 min)
+
 Before submitting, answer in your README:
+
 - Did writing tests first change how you thought about the implementation?
 - What did Copilot get wrong in the generated tests?
 - How much time did you spend fixing tests vs writing code?
 
+---
+
+## Navigation
+
+| Previous                                    | Home                        | Next                                 |
+| ------------------------------------------- | --------------------------- | ------------------------------------ |
+| [← Lab 2](LAB_2_SCAFFOLD_VERTICAL_SLICE.md) | [Week 1 Home](../README.md) | [Lab 4 →](LAB_4_REFACTOR_GUARDED.md) |
