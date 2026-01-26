@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "bootcamp": "node scripts/bootcamp.mjs",
+    "bootcamp:list": "node scripts/bootcamp.mjs list",
+    "bootcamp:help": "node scripts/bootcamp.mjs help",
+    "check:links": "npx markdown-link-check **/*.md --config .github/markdown-link-check-config.json"
+  },
+  "devDependencies": {
+    "yaml": "^2.3.0",
+    "markdown-link-check": "^3.11.0"
+  }
+}
