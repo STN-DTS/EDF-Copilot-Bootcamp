@@ -229,44 +229,48 @@ function updateLabRow(content, labInfo, newStatus, options = {}) {
     }
     
     // Look for the lab row in the correct section
-    if (sectionFound && line.includes(`| ${labName.split(':')[0]}`) || (sectionFound && line.includes(`| ${labName} |`))) {
-      found = true;
-      
-      // Parse the existing row
+    if (sectionFound && line.startsWith('|') && !line.includes('Status')) {
       const cells = line.split('|').map(c => c.trim());
-      
-      // Update cells based on command
-      // Format: | Lab Name | Status | Started | Completed | Duration | PR | Facilitator |
-      if (cells.length >= 7) {
-        cells[2] = ` ${newStatus} `; // Status
+      const labCell = cells[1] || '';
+      const normalizedLabCell = labCell.replace(/\s+/g, ' ').trim();
+      const normalizedTarget = labName.replace(/\s+/g, ' ').trim();
+
+      if (normalizedLabCell === normalizedTarget) {
+        found = true;
         
-        if (newStatus === STATUS.IN_PROGRESS) {
-          cells[3] = ` ${timestamp} `; // Started
-        } else if (newStatus === STATUS.COMPLETE) {
-          if (cells[3].trim() === '-') {
-            cells[3] = ` ${timestamp} `; // Started (if not already set)
-          }
-          cells[4] = ` ${timestamp} `; // Completed
+        // Update cells based on command
+        // Format: | Lab Name | Status | Started | Completed | Duration | PR | Facilitator |
+        if (cells.length >= 7) {
+          cells[2] = ` ${newStatus} `; // Status
           
-          // Calculate duration if we have both dates
-          const startDate = cells[3].trim();
-          if (startDate !== '-') {
-            const start = new Date(startDate);
-            const end = new Date(timestamp);
-            const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
-            cells[5] = ` ${days}d `; // Duration
-          }
-          
-          if (options.pr) {
-            cells[6] = ` [#${options.pr}](../../pulls/${options.pr}) `; // PR
-          }
-        } else if (newStatus === STATUS.BLOCKED) {
-          if (cells[3].trim() === '-') {
+          if (newStatus === STATUS.IN_PROGRESS) {
             cells[3] = ` ${timestamp} `; // Started
+          } else if (newStatus === STATUS.COMPLETE) {
+            if (cells[3].trim() === '-') {
+              cells[3] = ` ${timestamp} `; // Started (if not already set)
+            }
+            cells[4] = ` ${timestamp} `; // Completed
+            
+            // Calculate duration if we have both dates
+            const startDate = cells[3].trim();
+            if (startDate !== '-') {
+              const start = new Date(startDate);
+              const end = new Date(timestamp);
+              const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+              cells[5] = ` ${days}d `; // Duration
+            }
+            
+            if (options.pr) {
+              cells[6] = ` [#${options.pr}](../../pulls/${options.pr}) `; // PR
+            }
+          } else if (newStatus === STATUS.BLOCKED) {
+            if (cells[3].trim() === '-') {
+              cells[3] = ` ${timestamp} `; // Started
+            }
           }
+          
+          return cells.join('|');
         }
-        
-        return cells.join('|');
       }
     }
     
