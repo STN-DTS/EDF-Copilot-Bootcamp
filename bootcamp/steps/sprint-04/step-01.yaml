@@ -1,0 +1,19 @@
+id: sprint-04-step-01
+title: "Sprint 4: UI Polish"
+timebox: "60 minutes"
+objective: "Polish the user interface."
+read:
+  - docs/content/sprint-04/README.md
+touch:
+  - working/frontend/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - UI refined and consistent
+  - Animations/transitions added
+  - Responsive design verified
+validate:
+  - UI looks polished
+  - UX is smooth
+nav:
+  prev: sprint-04-step-00
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-04-step-02

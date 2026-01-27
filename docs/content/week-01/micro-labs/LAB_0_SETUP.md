@@ -4,6 +4,16 @@
 
 Prove your local environment + Copilot are ready, and produce a tiny PR that follows the workflow.
 
+---
+
+## 🔙 Building On
+
+This is your entry point to AI-assisted development. You're bringing your existing development skills and learning to augment them with Copilot.
+
+**Key connection:** Your prior experience with version control, builds, and PRs is the foundation—now we add AI to the workflow.
+
+---
+
 ## Timebox
 
 20–30 minutes
@@ -74,6 +84,14 @@ Before submitting, answer in your README:
 - What worked well during setup?
 - What was confusing or took longer than expected?
 - One thing you learned about Copilot today?
+
+---
+
+## 🔜 Looking Ahead
+
+In **Lab 1**, you'll learn the most critical discipline of AI-assisted development: **always get a plan before writing code**. The environment you just verified becomes your workspace for practicing plan-first prompting.
+
+**Next skill:** Prompt P0 (Plan only) becomes mandatory—no code until you have an approved plan.
 
 ---
 

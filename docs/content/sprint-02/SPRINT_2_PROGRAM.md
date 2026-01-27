@@ -743,9 +743,9 @@ Use RestAssured or Spring MockMvc.
 | BE Tasks | [./sprint-packet/BE_TASKS.md](./sprint-packet/BE_TASKS.md) | Backend breakdown |
 | NFR Checklist | [./sprint-packet/NFR_CHECKLIST.md](./sprint-packet/NFR_CHECKLIST.md) | Quality targets |
 | OpenAPI Contract | [../week-04/contracts/openapi.yaml](../week-04/contracts/openapi.yaml) | API reference |
-| FE Instructions | [../../.github/instructions/frontend.instructions.md](../../.github/instructions/frontend.instructions.md) | Frontend patterns |
-| BE Instructions | [../../.github/instructions/backend.instructions.md](../../.github/instructions/backend.instructions.md) | Backend patterns |
-| Testing Instructions | [../../.github/instructions/testing.instructions.md](../../.github/instructions/testing.instructions.md) | Test patterns |
+| FE Instructions | [../../../.github/instructions/frontend.instructions.md](../../../.github/instructions/frontend.instructions.md) | Frontend patterns |
+| BE Instructions | [../../../.github/instructions/backend.instructions.md](../../../.github/instructions/backend.instructions.md) | Backend patterns |
+| Testing Instructions | [../../../.github/instructions/testing.instructions.md](../../../.github/instructions/testing.instructions.md) | Test patterns |
 
 ---
 

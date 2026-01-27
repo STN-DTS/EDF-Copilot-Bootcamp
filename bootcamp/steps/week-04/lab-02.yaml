@@ -1,0 +1,19 @@
+id: week-04-lab-02
+title: "Lab 2: Contract-First Implementation"
+timebox: "35 minutes"
+objective: "Implement API to match the defined contract exactly."
+read:
+  - docs/content/week-04/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - Implementation matches contract
+  - Contract tests pass
+  - No contract violations
+validate:
+  - Contract compliance verified
+  - All tests pass
+nav:
+  prev: week-04-lab-01
+  home: .MASTER_BOOTCAMP.md
+  next: week-04-lab-03

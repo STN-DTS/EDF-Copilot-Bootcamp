@@ -1,0 +1,19 @@
+id: week-03-lab-00
+title: "Lab 0: Week 3 Setup"
+timebox: "15 minutes"
+objective: "Review Week 2 and prepare for Spec-First Packaging."
+read:
+  - docs/content/week-03/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - Week 2 labs completed
+  - Week 3 materials reviewed
+  - Working folder updated for Week 3
+validate:
+  - Previous week's work submitted
+  - New working folder created
+nav:
+  prev: week-02-lab-03
+  home: .MASTER_BOOTCAMP.md
+  next: week-03-lab-01

@@ -4,6 +4,16 @@
 
 Demonstrate end-to-end delivery discipline with Copilot. This is the culmination of Week 1—proving you can deliver a complete, tested, deployable feature using AI-assisted development while maintaining quality gates.
 
+---
+
+## 🔙 Building On
+
+Labs 0-5 gave you the complete AI-assisted development workflow: plan → scaffold → test → refactor → deploy. Now you'll apply ALL of those skills to build a complete feature.
+
+**Key connection:** This is where everything comes together. You'll use every skill from the week.
+
+---
+
 ## Timebox
 
 60–90 minutes
@@ -12,7 +22,7 @@ Demonstrate end-to-end delivery discipline with Copilot. This is the culmination
 
 - Completed Labs 0–5
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md) — use all prompts as needed
-- Review [Domain Context](../DOMAIN_CONTEXT.md) — your feature MUST use this domain
+- Review [Domain Context](../../../shared/reference-materials/DOMAIN_CONTEXT.md) — your feature MUST use this domain
 
 ## Domain Context
 
@@ -186,6 +196,16 @@ Before marking Week 1 complete, verify:
 - [ ] Reflection completed for Lab 6
 
 **Congratulations on completing Week 1! 🎉**
+
+---
+
+## 🔜 Looking Ahead
+
+With Week 1 complete, you've mastered the fundamentals of AI-assisted development. In **Week 2**, you'll learn about **Constraint Registers**—documenting the rules and boundaries that shape enterprise development.
+
+**Next skill:** Constraint-aware prompting. Week 2 teaches you to capture and communicate project constraints so Copilot generates code that fits your organization's requirements.
+
+**Sprint 1** will then have you apply all these skills to build a "thin slice" of a real feature with full delivery discipline.
 
 ---
 

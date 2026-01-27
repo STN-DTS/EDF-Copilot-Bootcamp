@@ -19,6 +19,7 @@
 | [FE_TASKS.md](sprint-packet/FE_TASKS.md)                     | Frontend task breakdown       |
 | [BE_TASKS.md](sprint-packet/BE_TASKS.md)                     | Backend task breakdown        |
 | [SECURITY_CHECKLIST.md](sprint-packet/SECURITY_CHECKLIST.md) | OWASP verification            |
+| [FAQ.md](FAQ.md)                                             | Common questions              |
 
 ---
 
@@ -187,7 +188,7 @@ docs/content/sprint-03/
 - [SPRINT_3_PROGRAM.md](SPRINT_3_PROGRAM.md) — Complete program
 - [Security Checklist](sprint-packet/SECURITY_CHECKLIST.md) — OWASP verification
 - [Prompt Pack](../../shared/reference-materials/PROMPT_PACK_V1.md) — P18 Security Review
-- [Testing Instructions](../../.github/instructions/testing.instructions.md) — Testing standards
+- [Testing Instructions](../../../.github/instructions/testing.instructions.md) — Testing standards
 
 ---
 

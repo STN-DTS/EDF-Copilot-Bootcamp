@@ -2095,6 +2095,6 @@ grep -rn "@GetMapping\|@PostMapping\|@PutMapping\|@DeleteMapping" src/main/java 
 | Sprint 3 Program | [../SPRINT_3_PROGRAM.md](../SPRINT_3_PROGRAM.md) |
 | Security Checklist | [SECURITY_CHECKLIST.md](SECURITY_CHECKLIST.md) |
 | FE Tasks | [FE_TASKS.md](FE_TASKS.md) |
-| Testing Instructions | [../../../.github/instructions/testing.instructions.md](../../../.github/instructions/testing.instructions.md) |
-| Backend Instructions | [../../../.github/instructions/backend.instructions.md](../../../.github/instructions/backend.instructions.md) |
+| Testing Instructions | [../../../../.github/instructions/testing.instructions.md](../../../../.github/instructions/testing.instructions.md) |
+| Backend Instructions | [../../../../.github/instructions/backend.instructions.md](../../../../.github/instructions/backend.instructions.md) |
 | Authentication ADR | [../../week-03/adrs/001-authentication.md](../../week-03/adrs/001-authentication.md) |

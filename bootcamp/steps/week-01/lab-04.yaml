@@ -1,0 +1,48 @@
+id: week-01-lab-04
+title: "Lab 4: Guarded Refactor"
+timebox: "30-40 minutes"
+objective: "Safely refactor existing code with test coverage as your safety net."
+read:
+  - docs/content/week-01/micro-labs/LAB_4_REFACTOR_GUARDED.md
+  - .github/instructions/testing.instructions.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+  - working/{frontend|backend}/{your_name}_{timestamp}/test/**
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - Existing tests pass before refactoring
+  - Refactoring improves code quality
+  - All tests still pass after refactoring
+  - No functional changes introduced
+  - Code review notes documented
+prompts:
+  - id: P0
+    title: "Analyze for Refactoring"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      Review this code and suggest refactoring opportunities:
+      - Code smells to address
+      - SOLID principle violations
+      - Performance improvements
+      - Readability improvements
+      
+      Prioritize changes by impact and risk.
+  - id: P1
+    title: "Apply Refactoring"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      Apply the approved refactoring changes:
+      1. Keep changes small and focused
+      2. Run tests after each change
+      3. Document what was changed and why
+validate:
+  - All tests pass before AND after refactoring
+  - Code quality improved (measurable)
+  - No behavioral changes introduced
+  - README.md documents refactoring decisions
+nav:
+  prev: week-01-lab-03
+  home: .MASTER_BOOTCAMP.md
+  next: week-01-lab-05

@@ -32,6 +32,7 @@ Static documents referenced during development:
 | [DOMAIN_CONTEXT.md](reference-materials/DOMAIN_CONTEXT.md) | Business domain (Order Management) |
 | [DEFINITION_OF_DONE.md](reference-materials/DEFINITION_OF_DONE.md) | Standard completion criteria |
 | [PROMPT_PACK_V1.md](reference-materials/PROMPT_PACK_V1.md) | Standard prompts (P0–P23) for AI-assisted development |
+| [ASSESSMENT_FRAMEWORK.md](ASSESSMENT_FRAMEWORK.md) | Competency-based assessment model, skill verification, and certification criteria |
 
 ---
 

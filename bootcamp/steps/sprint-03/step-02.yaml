@@ -1,0 +1,19 @@
+id: sprint-03-step-02
+title: "Sprint 3: Error Handling"
+timebox: "60 minutes"
+objective: "Implement comprehensive error handling."
+read:
+  - docs/content/sprint-03/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - Error boundaries implemented
+  - Graceful degradation
+  - Error logging complete
+validate:
+  - Error scenarios handled
+  - User experience maintained
+nav:
+  prev: sprint-03-step-01
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-03-step-03

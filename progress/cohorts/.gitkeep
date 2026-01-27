@@ -1,0 +1,2 @@
+# This file ensures the cohorts directory is tracked by git
+# Student progress files will be created in subdirectories: cohorts/{YYYY-MM}/{github-username}.md

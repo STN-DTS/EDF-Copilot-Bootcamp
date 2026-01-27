@@ -1,0 +1,19 @@
+id: sprint-04-step-00
+title: "Sprint 4: Kickoff"
+timebox: "30 minutes"
+objective: "Plan Sprint 4 with focus on polish and shipping."
+read:
+  - docs/content/sprint-04/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/SPRINT_PLAN.md
+definition_of_done:
+  - Sprint 4 goal defined
+  - Polish items identified
+  - Ship checklist created
+validate:
+  - Sprint plan documented
+  - Ship criteria defined
+nav:
+  prev: sprint-03-step-04
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-04-step-01

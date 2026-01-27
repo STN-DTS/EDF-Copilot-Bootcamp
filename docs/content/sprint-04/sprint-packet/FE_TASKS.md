@@ -1297,4 +1297,4 @@ npm run storybook
 | Sprint Packet | [SPRINT_PACKET.md](SPRINT_PACKET.md) |
 | BE Tasks | [BE_TASKS.md](BE_TASKS.md) |
 | Ship-Ready Checklist | [SHIP_READY_CHECKLIST.md](SHIP_READY_CHECKLIST.md) |
-| Frontend Instructions | [../../../.github/instructions/frontend.instructions.md](../../../.github/instructions/frontend.instructions.md) |
+| Frontend Instructions | [../../../../.github/instructions/frontend.instructions.md](../../../../.github/instructions/frontend.instructions.md) |

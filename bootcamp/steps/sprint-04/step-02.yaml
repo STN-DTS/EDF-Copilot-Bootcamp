@@ -1,0 +1,19 @@
+id: sprint-04-step-02
+title: "Sprint 4: Documentation"
+timebox: "60 minutes"
+objective: "Complete all documentation."
+read:
+  - docs/content/sprint-04/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/**
+definition_of_done:
+  - README complete
+  - API docs generated
+  - User guide written
+validate:
+  - Docs are comprehensive
+  - Links work correctly
+nav:
+  prev: sprint-04-step-01
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-04-step-03

@@ -17,6 +17,7 @@
 | [Frontend Tasks](sprint-packet/FE_TASKS.md)                   | FE task breakdown with code examples     |
 | [Backend Tasks](sprint-packet/BE_TASKS.md)                    | BE task breakdown with code examples     |
 | [Ship-Ready Checklist](sprint-packet/SHIP_READY_CHECKLIST.md) | Gate 5 verification                      |
+| [FAQ](FAQ.md)                                                 | Common questions and troubleshooting     |
 
 ---
 

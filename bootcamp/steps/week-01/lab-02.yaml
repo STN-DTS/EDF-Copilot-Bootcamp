@@ -1,0 +1,42 @@
+id: week-01-lab-02
+title: "Lab 2: Scaffold Vertical Slice"
+timebox: "30-40 minutes"
+objective: "Build a complete vertical slice from UI to database using Copilot-generated scaffolding."
+read:
+  - docs/content/week-01/micro-labs/LAB_2_SCAFFOLD_VERTICAL_SLICE.md
+  - docs/shared/reference-materials/DOMAIN_CONTEXT.md
+  - .github/instructions/backend.instructions.md
+  - .github/instructions/frontend.instructions.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+  - working/{frontend|backend}/{your_name}_{timestamp}/PLAN.md
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - Vertical slice implemented (UI → API → Service → Repository)
+  - All layers connected and functional
+  - Basic CRUD operations working
+  - Code follows project conventions
+prompts:
+  - id: P0
+    title: "Scaffold Vertical Slice"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      Based on my approved PLAN.md, scaffold a vertical slice for [ENTITY].
+      
+      Create:
+      - Controller/Route layer with REST endpoints
+      - Service layer with business logic
+      - Repository layer with data access
+      - DTO/Model classes
+      
+      Follow the patterns from the instruction files.
+validate:
+  - All layers compile/run without errors
+  - API endpoints respond correctly
+  - Code follows established patterns
+  - README.md updated with implementation notes
+nav:
+  prev: week-01-lab-01
+  home: .MASTER_BOOTCAMP.md
+  next: week-01-lab-03

@@ -4,6 +4,16 @@
 
 Practice safe refactoring with strict scope control. This lab enforces discipline around making code improvements without introducing behavioral changes—a critical skill for maintaining production systems.
 
+---
+
+## 🔙 Building On
+
+In **Lab 3**, you built a test suite that verifies your code works. Now those tests become your safety net for refactoring.
+
+**Key connection:** Without Lab 3's tests, refactoring would be risky. With them, you can change code confidently.
+
+---
+
 ## Timebox
 
 45–60 minutes
@@ -12,7 +22,7 @@ Practice safe refactoring with strict scope control. This lab enforces disciplin
 
 - Completed Labs 0–3
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md) — focus on P4 (Guarded refactor)
-- Review [Domain Context](../DOMAIN_CONTEXT.md) for business context
+- Review [Domain Context](../../../shared/reference-materials/DOMAIN_CONTEXT.md) for business context
 
 ## Domain Context
 
@@ -118,6 +128,14 @@ Before submitting, answer in your README:
 - Did the guarded refactor prompt help you avoid scope creep?
 - What risks did you identify, and how did you mitigate them?
 - What would you do differently next time?
+
+---
+
+## 🔜 Looking Ahead
+
+In **Lab 5**, you'll prepare your clean, tested code for production deployment on OpenShift. Health probes, externalized config, and Kubernetes manifests turn your development code into deployable artifacts.
+
+**Next skill:** Production readiness. Code that works locally must also work in containers with proper health checks and configuration.
 
 ---
 

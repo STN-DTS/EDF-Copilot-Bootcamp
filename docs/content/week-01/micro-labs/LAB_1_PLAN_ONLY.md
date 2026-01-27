@@ -4,6 +4,16 @@
 
 Train "plan-first" prompting discipline. This is the foundation of safe AI-assisted development.
 
+---
+
+## 🔙 Building On
+
+In **Lab 0**, you verified your environment and submitted your first PR. Now you'll learn the most important discipline: **always get a plan before writing code**.
+
+**Key connection:** The PR workflow from Lab 0 stays the same—we're adding a mandatory planning step before any code changes.
+
+---
+
 ## Timebox
 
 20–30 minutes
@@ -83,6 +93,14 @@ Before submitting, answer in your README:
 - Did the plan help you stay focused?
 - What did Copilot miss in the initial plan?
 - How did you refine the plan before implementing?
+
+---
+
+## 🔜 Looking Ahead
+
+In **Lab 2**, you'll use the planning skills you just practiced to scaffold a complete vertical slice—from endpoint to database. The plan becomes your blueprint for implementation.
+
+**Next skill:** Execute on a plan with stop-points between steps. You'll generate real code, not just plans.
 
 ---
 

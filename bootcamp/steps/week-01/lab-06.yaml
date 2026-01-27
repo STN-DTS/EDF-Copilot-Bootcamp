@@ -1,0 +1,52 @@
+id: week-01-lab-06
+title: "Lab 6: Capstone Mini-Feature"
+timebox: "45-60 minutes"
+objective: "Apply all Week 1 skills to implement a complete mini-feature end-to-end."
+read:
+  - docs/content/week-01/micro-labs/LAB_6_CAPSTONE_MINI_FEATURE.md
+  - docs/shared/reference-materials/DOMAIN_CONTEXT.md
+  - docs/shared/reference-materials/DEFINITION_OF_DONE.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/**
+definition_of_done:
+  - PLAN.md created and approved (Lab 1 skill)
+  - Vertical slice implemented (Lab 2 skill)
+  - Tests written first and passing (Lab 3 skill)
+  - Code refactored for quality (Lab 4 skill)
+  - Container-ready with manifests (Lab 5 skill)
+  - PR submitted with all checklist items
+prompts:
+  - id: P0
+    title: "Capstone Planning"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      I'm implementing a capstone feature: [FEATURE DESCRIPTION].
+      
+      Create a comprehensive plan that:
+      1. Breaks down into vertical slices
+      2. Identifies test scenarios
+      3. Notes refactoring opportunities
+      4. Includes deployment considerations
+  - id: P1
+    title: "Capstone Implementation"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      Execute the approved plan step by step:
+      1. Write tests first
+      2. Implement vertical slice
+      3. Refactor for quality
+      4. Add container configuration
+      
+      Verify each step before proceeding.
+validate:
+  - All Definition of Done criteria met
+  - Build passes without errors
+  - All tests pass
+  - PR checklist complete
+  - Facilitator review approved
+nav:
+  prev: week-01-lab-05
+  home: .MASTER_BOOTCAMP.md
+  next: week-02-lab-00

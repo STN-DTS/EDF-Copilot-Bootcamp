@@ -1,0 +1,19 @@
+id: sprint-03-step-01
+title: "Sprint 3: Security Implementation"
+timebox: "60 minutes"
+objective: "Implement security requirements."
+read:
+  - docs/content/sprint-03/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - Authentication implemented
+  - Authorization in place
+  - Input validation complete
+validate:
+  - Security tests pass
+  - Vulnerabilities addressed
+nav:
+  prev: sprint-03-step-00
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-03-step-02

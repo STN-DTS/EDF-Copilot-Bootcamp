@@ -1,0 +1,31 @@
+id: week-01-lab-00
+title: "Lab 0: Setup Verification"
+timebox: "15-20 minutes"
+objective: "Verify your development environment is properly configured for the bootcamp."
+read:
+  - docs/content/week-01/micro-labs/LAB_0_SETUP.md
+  - .github/copilot-instructions.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - VS Code opens with Copilot active
+  - Git is configured with your name and email
+  - Node.js and npm are installed
+  - Working folder structure created
+prompts:
+  - id: P0
+    title: "Environment Check"
+    text: |
+      Check my development environment for the EDF Copilot Bootcamp:
+      - Is VS Code configured correctly?
+      - Is Git set up?
+      - Are Node.js and npm installed?
+      - Is GitHub Copilot extension active?
+validate:
+  - Copilot responds to queries
+  - Working folder exists at correct path
+  - README.md created with name and date
+nav:
+  prev: null
+  home: .MASTER_BOOTCAMP.md
+  next: week-01-lab-01

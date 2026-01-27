@@ -1,0 +1,19 @@
+id: sprint-02-step-01
+title: "Sprint 2: Feature Expansion"
+timebox: "60 minutes"
+objective: "Expand on the thin slice with additional features."
+read:
+  - docs/content/sprint-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - New features implemented
+  - Tests cover new functionality
+  - Code reviewed
+validate:
+  - All new features work
+  - No regressions
+nav:
+  prev: sprint-02-step-00
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-02-step-02

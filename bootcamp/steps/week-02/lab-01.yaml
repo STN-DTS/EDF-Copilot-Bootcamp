@@ -1,0 +1,20 @@
+id: week-02-lab-01
+title: "Lab 1: Constraint Identification"
+timebox: "30 minutes"
+objective: "Identify and document project constraints with Copilot assistance."
+read:
+  - docs/content/week-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/CONSTRAINTS.md
+definition_of_done:
+  - Technical constraints documented
+  - Business constraints documented
+  - Regulatory constraints identified
+  - Constraints prioritized
+validate:
+  - CONSTRAINTS.md exists with structured content
+  - Each constraint has impact assessment
+nav:
+  prev: week-02-lab-00
+  home: .MASTER_BOOTCAMP.md
+  next: week-02-lab-02

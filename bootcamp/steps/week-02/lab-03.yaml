@@ -1,0 +1,19 @@
+id: week-02-lab-03
+title: "Lab 3: Constraint-Aware Implementation"
+timebox: "40 minutes"
+objective: "Implement features with constraints actively guiding decisions."
+read:
+  - docs/content/week-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - Implementation respects constraints
+  - Constraint violations flagged early
+  - Documentation updated
+validate:
+  - Code reflects constraint decisions
+  - Tests validate constraint compliance
+nav:
+  prev: week-02-lab-02
+  home: .MASTER_BOOTCAMP.md
+  next: week-03-lab-00

@@ -1,0 +1,19 @@
+id: sprint-01-step-03
+title: "Sprint 1: Integration"
+timebox: "45 minutes"
+objective: "Integrate frontend and backend slices."
+read:
+  - docs/content/sprint-01/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/**
+definition_of_done:
+  - End-to-end flow working
+  - Integration tests passing
+  - Demo-ready
+validate:
+  - Full flow works end-to-end
+  - No integration issues
+nav:
+  prev: sprint-01-step-02
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-01-step-04

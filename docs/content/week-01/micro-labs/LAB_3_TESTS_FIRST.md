@@ -4,6 +4,16 @@
 
 Turn acceptance criteria into tests, then code. This enforces the "proof culture" where tests drive implementation.
 
+---
+
+## 🔙 Building On
+
+In **Lab 2**, you scaffolded a vertical slice. Now you'll add tests FIRST, before the implementation—true TDD with AI assistance.
+
+**Key connection:** The scaffold from Lab 2 gives you something to test. Tests verify the AI-generated code actually works.
+
+---
+
 ## Timebox
 
 60–90 minutes
@@ -12,7 +22,7 @@ Turn acceptance criteria into tests, then code. This enforces the "proof culture
 
 - Completed Labs 0–2
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md) — focus on P2 (Tests-first)
-- Review [Domain Context](../DOMAIN_CONTEXT.md) for business context
+- Review [Domain Context](../../../shared/reference-materials/DOMAIN_CONTEXT.md) for business context
 
 ## Domain Context
 
@@ -95,6 +105,14 @@ Before submitting, answer in your README:
 - Did writing tests first change how you thought about the implementation?
 - What did Copilot get wrong in the generated tests?
 - How much time did you spend fixing tests vs writing code?
+
+---
+
+## 🔜 Looking Ahead
+
+In **Lab 4**, the tests you just wrote become your safety net for refactoring. With comprehensive test coverage, you can confidently improve code structure without fear of breaking functionality.
+
+**Next skill:** Prompt P4 (Guarded refactor) lets you improve code safely. Tests catch regressions automatically.
 
 ---
 

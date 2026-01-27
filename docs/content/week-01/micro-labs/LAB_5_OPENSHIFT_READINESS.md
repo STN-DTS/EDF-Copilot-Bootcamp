@@ -4,6 +4,16 @@
 
 Ensure your service is OpenShift-deployable by default. This lab focuses on production readiness—health probes, externalized config, and deployment manifests—which are required before any government release gate.
 
+---
+
+## 🔙 Building On
+
+In **Lab 4**, you refactored code safely using your test suite. Now you'll prepare that code for production deployment on OpenShift.
+
+**Key connection:** Clean, tested code from Labs 3-4 is much easier to containerize and deploy.
+
+---
+
 ## Timebox
 
 45–60 minutes
@@ -12,7 +22,7 @@ Ensure your service is OpenShift-deployable by default. This lab focuses on prod
 
 - Completed Labs 0–4
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md)
-- Review [Domain Context](../DOMAIN_CONTEXT.md) for business context
+- Review [Domain Context](../../../shared/reference-materials/DOMAIN_CONTEXT.md) for business context
 
 ## Domain Context
 
@@ -156,6 +166,14 @@ Before submitting, answer in your README:
 - What was surprising about preparing for OpenShift deployment?
 - What configuration did you externalize?
 - How would this change for a production deployment?
+
+---
+
+## 🔜 Looking Ahead
+
+In **Lab 6**, you'll apply ALL skills from Labs 0-5 to build a complete mini-feature end-to-end. Planning, scaffolding, testing, refactoring, and deployment readiness come together in the capstone.
+
+**Next skill:** Full integration. The capstone proves you can deliver a production-quality feature using AI-assisted development.
 
 ---
 

@@ -98,9 +98,9 @@
 |----------|----------|
 | Sprint 3 Program | [../SPRINT_3_PROGRAM.md](../SPRINT_3_PROGRAM.md) |
 | Sprint 3 README | [../README.md](../README.md) |
-| Testing Instructions | [../../../.github/instructions/testing.instructions.md](../../../.github/instructions/testing.instructions.md) |
-| Backend Instructions | [../../../.github/instructions/backend.instructions.md](../../../.github/instructions/backend.instructions.md) |
-| Frontend Instructions | [../../../.github/instructions/frontend.instructions.md](../../../.github/instructions/frontend.instructions.md) |
+| Testing Instructions | [../../../../.github/instructions/testing.instructions.md](../../../../.github/instructions/testing.instructions.md) |
+| Backend Instructions | [../../../../.github/instructions/backend.instructions.md](../../../../.github/instructions/backend.instructions.md) |
+| Frontend Instructions | [../../../../.github/instructions/frontend.instructions.md](../../../../.github/instructions/frontend.instructions.md) |
 
 ## Dependencies
 

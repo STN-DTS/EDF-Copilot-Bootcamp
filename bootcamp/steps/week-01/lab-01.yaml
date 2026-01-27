@@ -1,0 +1,39 @@
+id: week-01-lab-01
+title: "Lab 1: Plan Only"
+timebox: "25-30 minutes"
+objective: "Learn to create implementation plans with Copilot before writing any code."
+read:
+  - docs/content/week-01/micro-labs/LAB_1_PLAN_ONLY.md
+  - docs/shared/reference-materials/PROMPT_PACK_V1.md
+  - docs/shared/reference-materials/DOMAIN_CONTEXT.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/PLAN.md
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - PLAN.md contains implementation plan from Copilot
+  - Plan includes files to create/modify
+  - Plan includes step-by-step implementation
+  - Plan includes risks and considerations
+  - No code written (planning only)
+prompts:
+  - id: P0
+    title: "Request Implementation Plan"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      I need to implement [FEATURE DESCRIPTION].
+      
+      Before writing any code, please provide a detailed plan:
+      1. What files need to be created or modified?
+      2. What are the step-by-step implementation tasks?
+      3. What tests should be written?
+      4. What are the potential risks or edge cases?
+      5. What dependencies or prerequisites are needed?
+validate:
+  - PLAN.md exists with structured implementation plan
+  - Plan is reviewed and approved before proceeding
+  - README.md updated with lab completion notes
+nav:
+  prev: week-01-lab-00
+  home: .MASTER_BOOTCAMP.md
+  next: week-01-lab-02

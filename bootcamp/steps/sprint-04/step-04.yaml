@@ -1,0 +1,20 @@
+id: sprint-04-step-04
+title: "Sprint 4: Ship & Celebrate"
+timebox: "30 minutes"
+objective: "Ship the final product and celebrate completion!"
+read:
+  - docs/content/sprint-04/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/FINAL_REPORT.md
+definition_of_done:
+  - Product shipped/deployed
+  - Final presentation done
+  - Bootcamp completed!
+validate:
+  - All deliverables accepted
+  - Certificate earned
+  - Celebration complete! 🎉
+nav:
+  prev: sprint-04-step-03
+  home: .MASTER_BOOTCAMP.md
+  next: null

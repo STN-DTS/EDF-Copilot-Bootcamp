@@ -109,8 +109,8 @@
 | Sprint 4 Program | [../SPRINT_4_PROGRAM.md](../SPRINT_4_PROGRAM.md) |
 | Sprint 4 Overview | [../README.md](../README.md) |
 | Definition of Done | [../../../shared/reference-materials/DEFINITION_OF_DONE.md](../../../shared/reference-materials/DEFINITION_OF_DONE.md) |
-| Backend Instructions | [../../../.github/instructions/backend.instructions.md](../../../.github/instructions/backend.instructions.md) |
-| Frontend Instructions | [../../../.github/instructions/frontend.instructions.md](../../../.github/instructions/frontend.instructions.md) |
+| Backend Instructions | [../../../../.github/instructions/backend.instructions.md](../../../../.github/instructions/backend.instructions.md) |
+| Frontend Instructions | [../../../../.github/instructions/frontend.instructions.md](../../../../.github/instructions/frontend.instructions.md) |
 | Monitoring tools available | DevOps | ⏳ | Medium |
 
 ---

@@ -4,7 +4,7 @@
 - [Lab Rubrics](LAB_RUBRICS.md) — How labs are evaluated
 - [Prompt Pack](../../shared/reference-materials/PROMPT_PACK_V1.md) — Standard prompts to use
 - [Domain Context](../../shared/reference-materials/DOMAIN_CONTEXT.md) — Order Management entities
-- [Example Solutions](../working/) — Reference submissions
+- [Example Solutions](../../../working/) — Reference submissions
 
 ---
 

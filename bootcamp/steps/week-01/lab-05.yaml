@@ -1,0 +1,46 @@
+id: week-01-lab-05
+title: "Lab 5: OpenShift Readiness"
+timebox: "30-40 minutes"
+objective: "Prepare your application for cloud-native deployment on OpenShift."
+read:
+  - docs/content/week-01/micro-labs/LAB_5_OPENSHIFT_READINESS.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/Dockerfile
+  - working/{frontend|backend}/{your_name}_{timestamp}/kubernetes/**
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - Dockerfile created and builds successfully
+  - Health check endpoints implemented
+  - Kubernetes/OpenShift manifests created
+  - Application runs in container locally
+  - 12-factor app principles followed
+prompts:
+  - id: P0
+    title: "Generate Dockerfile"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      Generate a production-ready Dockerfile for this application:
+      - Multi-stage build for smaller image
+      - Non-root user for security
+      - Health check instruction
+      - Proper layer caching
+  - id: P1
+    title: "Generate Kubernetes Manifests"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      Generate OpenShift/Kubernetes manifests:
+      - Deployment with resource limits
+      - Service for internal networking
+      - ConfigMap for configuration
+      - Health probes (liveness, readiness)
+validate:
+  - Dockerfile builds without errors
+  - Container runs and responds to requests
+  - Kubernetes manifests are valid YAML
+  - Health endpoints return correct responses
+nav:
+  prev: week-01-lab-04
+  home: .MASTER_BOOTCAMP.md
+  next: week-01-lab-06

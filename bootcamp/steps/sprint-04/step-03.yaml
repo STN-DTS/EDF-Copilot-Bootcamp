@@ -1,0 +1,19 @@
+id: sprint-04-step-03
+title: "Sprint 4: Final Testing"
+timebox: "45 minutes"
+objective: "Complete final testing and verification."
+read:
+  - docs/content/sprint-04/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/test/**
+definition_of_done:
+  - All tests passing
+  - Manual testing complete
+  - Bug fixes applied
+validate:
+  - No known defects
+  - Ship-ready
+nav:
+  prev: sprint-04-step-02
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-04-step-04

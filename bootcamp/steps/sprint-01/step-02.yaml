@@ -1,0 +1,20 @@
+id: sprint-01-step-02
+title: "Sprint 1: Frontend Slice"
+timebox: "60 minutes"
+objective: "Implement frontend thin slice."
+read:
+  - docs/content/sprint-01/README.md
+  - .github/instructions/frontend.instructions.md
+touch:
+  - working/frontend/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - UI components implemented
+  - Frontend tests passing
+  - Integration with backend verified
+validate:
+  - UI renders correctly
+  - API integration works
+nav:
+  prev: sprint-01-step-01
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-01-step-03

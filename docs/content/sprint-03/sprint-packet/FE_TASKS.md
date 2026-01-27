@@ -2589,5 +2589,5 @@ grep -r "password\|secret\|api.key\|token" src/ --include="*.ts" --include="*.ts
 | Sprint 3 Program | [../SPRINT_3_PROGRAM.md](../SPRINT_3_PROGRAM.md) |
 | Security Checklist | [SECURITY_CHECKLIST.md](SECURITY_CHECKLIST.md) |
 | BE Tasks | [BE_TASKS.md](BE_TASKS.md) |
-| Testing Instructions | [../../../.github/instructions/testing.instructions.md](../../../.github/instructions/testing.instructions.md) |
+| Testing Instructions | [../../../../.github/instructions/testing.instructions.md](../../../../.github/instructions/testing.instructions.md) |
 | Sprint 2 FE Tasks | [../../sprint-02/sprint-packet/FE_TASKS.md](../../sprint-02/sprint-packet/FE_TASKS.md) |

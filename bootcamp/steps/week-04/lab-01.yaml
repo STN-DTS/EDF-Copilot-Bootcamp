@@ -1,0 +1,19 @@
+id: week-04-lab-01
+title: "Lab 1: Contract Definition"
+timebox: "30 minutes"
+objective: "Define API contracts before implementation."
+read:
+  - docs/content/week-04/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/api/**
+definition_of_done:
+  - OpenAPI/Swagger spec created
+  - Contract tests defined
+  - Consumer expectations documented
+validate:
+  - Contract is valid and complete
+  - All endpoints documented
+nav:
+  prev: week-04-lab-00
+  home: .MASTER_BOOTCAMP.md
+  next: week-04-lab-02

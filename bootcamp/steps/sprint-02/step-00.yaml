@@ -1,0 +1,19 @@
+id: sprint-02-step-00
+title: "Sprint 2: Kickoff"
+timebox: "30 minutes"
+objective: "Plan Sprint 2 with focus on expanding features and NFRs."
+read:
+  - docs/content/sprint-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/SPRINT_PLAN.md
+definition_of_done:
+  - Sprint 2 goal defined
+  - NFR targets identified
+  - Feature expansion planned
+validate:
+  - Sprint plan documented
+  - NFR metrics defined
+nav:
+  prev: sprint-01-step-04
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-02-step-01

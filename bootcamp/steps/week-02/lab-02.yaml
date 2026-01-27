@@ -1,0 +1,19 @@
+id: week-02-lab-02
+title: "Lab 2: Constraint Register"
+timebox: "35 minutes"
+objective: "Build a formal constraint register with traceability."
+read:
+  - docs/content/week-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/CONSTRAINT_REGISTER.md
+definition_of_done:
+  - Formal register created
+  - Constraints linked to requirements
+  - Mitigation strategies documented
+validate:
+  - Register follows template
+  - All constraints have mitigations
+nav:
+  prev: week-02-lab-01
+  home: .MASTER_BOOTCAMP.md
+  next: week-02-lab-03

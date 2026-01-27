@@ -1,0 +1,19 @@
+id: sprint-02-step-04
+title: "Sprint 2: Review & Retro"
+timebox: "30 minutes"
+objective: "Complete Sprint 2 with review and retrospective."
+read:
+  - docs/content/sprint-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/RETRO.md
+definition_of_done:
+  - Sprint demo completed
+  - NFR results documented
+  - Retrospective captured
+validate:
+  - Sprint 2 deliverables accepted
+  - Ready for Sprint 3
+nav:
+  prev: sprint-02-step-03
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-03-step-00

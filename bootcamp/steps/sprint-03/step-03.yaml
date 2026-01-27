@@ -1,0 +1,19 @@
+id: sprint-03-step-03
+title: "Sprint 3: Security Testing"
+timebox: "45 minutes"
+objective: "Comprehensive security testing."
+read:
+  - docs/content/sprint-03/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/test/**
+definition_of_done:
+  - Security tests written
+  - Penetration testing basics
+  - OWASP checklist reviewed
+validate:
+  - Security tests pass
+  - No critical vulnerabilities
+nav:
+  prev: sprint-03-step-02
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-03-step-04

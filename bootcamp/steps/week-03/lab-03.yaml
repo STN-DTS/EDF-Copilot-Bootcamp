@@ -1,0 +1,20 @@
+id: week-03-lab-03
+title: "Lab 3: Package for Distribution"
+timebox: "40 minutes"
+objective: "Package the spec-driven implementation for consumption."
+read:
+  - docs/content/week-03/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/**
+definition_of_done:
+  - Package structure created
+  - Documentation generated
+  - Version properly set
+  - Package validates correctly
+validate:
+  - Package builds successfully
+  - Documentation is complete
+nav:
+  prev: week-03-lab-02
+  home: .MASTER_BOOTCAMP.md
+  next: week-04-lab-00

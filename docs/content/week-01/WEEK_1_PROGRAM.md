@@ -19,7 +19,7 @@ By end of week, the team can:
 
 | Resource | Purpose |
 |----------|---------|
-| [.START_HERE.md](../../.START_HERE.md) | Entry point for all participants |
+| [.START_HERE.md](../../../.START_HERE.md) | Entry point for all participants |
 | [DOMAIN_CONTEXT.md](../../shared/reference-materials/DOMAIN_CONTEXT.md) | Order Management business domain |
 | [PROMPT_PACK_V1.md](../../shared/reference-materials/PROMPT_PACK_V1.md) | Standard prompts (P0–P23) |
 | [LAB_RUBRICS.md](LAB_RUBRICS.md) | Evaluation criteria |

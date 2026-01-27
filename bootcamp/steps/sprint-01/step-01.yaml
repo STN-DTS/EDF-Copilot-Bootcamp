@@ -1,0 +1,20 @@
+id: sprint-01-step-01
+title: "Sprint 1: Backend Slice"
+timebox: "60 minutes"
+objective: "Implement backend thin slice."
+read:
+  - docs/content/sprint-01/README.md
+  - .github/instructions/backend.instructions.md
+touch:
+  - working/backend/{your_name}_{timestamp}/src/**
+definition_of_done:
+  - API endpoints implemented
+  - Tests written and passing
+  - Code reviewed
+validate:
+  - API responds correctly
+  - All tests pass
+nav:
+  prev: sprint-01-step-00
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-01-step-02

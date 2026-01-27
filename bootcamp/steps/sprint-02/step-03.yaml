@@ -1,0 +1,19 @@
+id: sprint-02-step-03
+title: "Sprint 2: Integration & Testing"
+timebox: "45 minutes"
+objective: "Integrate and test expanded features."
+read:
+  - docs/content/sprint-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/**
+definition_of_done:
+  - All features integrated
+  - E2E tests passing
+  - Performance verified
+validate:
+  - Full integration working
+  - NFRs validated
+nav:
+  prev: sprint-02-step-02
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-02-step-04

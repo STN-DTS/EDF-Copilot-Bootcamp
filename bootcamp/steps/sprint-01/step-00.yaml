@@ -1,0 +1,19 @@
+id: sprint-01-step-00
+title: "Sprint 1: Kickoff"
+timebox: "30 minutes"
+objective: "Plan the thin slice for Sprint 1."
+read:
+  - docs/content/sprint-01/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/SPRINT_PLAN.md
+definition_of_done:
+  - Sprint goal defined
+  - User stories selected
+  - Thin slice identified
+validate:
+  - Sprint plan documented
+  - Team alignment achieved
+nav:
+  prev: week-04-lab-03
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-01-step-01

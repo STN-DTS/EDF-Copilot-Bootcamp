@@ -217,7 +217,7 @@ src/
 ### Error Handling
 
 All error responses must use RFC 7807 Problem Details format:
-- See [ADR-002: Error Handling](../week-03/adrs/002-error-handling.md)
+- See [ADR-002: Error Handling](../../week-03/adrs/002-error-handling.md)
 
 ### Performance
 

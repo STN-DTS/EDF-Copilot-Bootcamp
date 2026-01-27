@@ -1,0 +1,50 @@
+id: week-01-lab-03
+title: "Lab 3: Tests First"
+timebox: "35-45 minutes"
+objective: "Practice TDD workflow - write tests before implementation using Copilot."
+read:
+  - docs/content/week-01/micro-labs/LAB_3_TESTS_FIRST.md
+  - .github/instructions/testing.instructions.md
+  - docs/shared/reference-materials/DEFINITION_OF_DONE.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/test/**
+  - working/{frontend|backend}/{your_name}_{timestamp}/src/**
+  - working/{frontend|backend}/{your_name}_{timestamp}/PLAN.md
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - Tests written BEFORE implementation
+  - Tests initially fail (red phase)
+  - Implementation makes tests pass (green phase)
+  - Test coverage meets minimum threshold
+  - All tests passing
+prompts:
+  - id: P0
+    title: "Generate Test First"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      I'm practicing TDD. Generate tests FIRST for [FEATURE].
+      
+      Requirements:
+      - Unit tests for the service layer
+      - Integration tests for the API endpoints
+      - Edge case coverage
+      - Use mocks/stubs appropriately
+      
+      Do NOT implement the code yet - just the tests.
+  - id: P1
+    title: "Implement to Pass Tests"
+    text: |
+      No secrets, no production data. Use placeholders.
+      
+      Now implement the minimal code to make all tests pass.
+      Follow the patterns from the instruction files.
+validate:
+  - Tests exist and are well-structured
+  - All tests pass
+  - Implementation follows TDD principles
+  - README.md documents the TDD process used
+nav:
+  prev: week-01-lab-02
+  home: .MASTER_BOOTCAMP.md
+  next: week-01-lab-04

@@ -4,6 +4,16 @@
 
 Practice safe, plan-first Copilot scaffolding and produce deployable-grade code structure.
 
+---
+
+## 🔙 Building On
+
+In **Lab 1**, you practiced getting a plan from Copilot before coding. Now you'll use that plan to scaffold a complete vertical slice—from endpoint to database.
+
+**Key connection:** The plan you create in this lab follows the same P0 pattern, but now you'll execute on it.
+
+---
+
 ## Timebox
 
 60–90 minutes
@@ -12,7 +22,7 @@ Practice safe, plan-first Copilot scaffolding and produce deployable-grade code 
 
 - Completed Labs 0 and 1
 - Review [Prompt Pack V1](../../../shared/reference-materials/PROMPT_PACK_V1.md) — focus on P0 and P1
-- Review [Domain Context](../DOMAIN_CONTEXT.md) for business context
+- Review [Domain Context](../../../shared/reference-materials/DOMAIN_CONTEXT.md) for business context
 
 ## Domain Context
 
@@ -99,6 +109,14 @@ Before submitting, answer in your README:
 - How did breaking into 2–3 steps help (or not)?
 - What did Copilot scaffold well? What needed fixing?
 - Would you structure the prompts differently next time?
+
+---
+
+## 🔜 Looking Ahead
+
+In **Lab 3**, you'll add tests BEFORE implementation—true Test-Driven Development (TDD) with AI assistance. The scaffold you just built gives you something concrete to verify.
+
+**Next skill:** Prompt P2 (Tests-first) ensures AI-generated code actually works. Tests become your proof of correctness.
 
 ---
 

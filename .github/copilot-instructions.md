@@ -100,6 +100,50 @@ All lab work must be submitted in the `/working/` folder with proper structure:
 
 ---
 
+## Student Course Navigation
+
+Copilot can help students navigate the bootcamp using natural language commands.
+
+### Quick Reference Commands
+
+| Student Says | Action |
+|--------------|--------|
+| "Start the bootcamp" | Run onboarding flow |
+| "Where did I leave off?" | Check and report progress |
+| "Start lab 2" | Begin lab, mark as in-progress |
+| "Finished lab 3" | Mark lab complete |
+| "I'm stuck" | Offer debugging help |
+
+### Key Files for Navigation
+
+| File | Purpose |
+|------|---------|
+| `.START_HERE.md` | Entry point for new students |
+| `.MASTER_BOOTCAMP.md` | Complete table of contents |
+| `COPILOT_COURSE_COMMANDS.md` | Quick reference for voice commands |
+| `progress/cohorts/<cohort>/<user>.md` | Individual progress tracking |
+
+### Onboarding New Students
+
+When a student says "Start the bootcamp" or similar:
+1. Welcome them to the EDF Copilot Bootcamp
+2. Ask for: name, GitHub username, cohort, track (frontend/backend)
+3. Run `npm install` and `npm run progress:init -- ...`
+4. Direct them to `.START_HERE.md`
+5. Offer to start Lab 0
+
+### Checking Progress
+
+When a student asks "Where did I leave off?" or similar:
+1. Identify their GitHub username and cohort
+2. Read `progress/cohorts/<cohort>/<username>.md`
+3. Report their completion status
+4. Suggest the next lab to work on
+
+See `.github/instructions/student-navigation.instructions.md` for detailed flows.
+
+---
+
 ## Documentation
 
 - Update relevant documentation when adding features

@@ -1,0 +1,21 @@
+id: week-04-lab-03
+title: "Lab 3: Contract Testing"
+timebox: "40 minutes"
+objective: "Comprehensive contract testing and validation."
+read:
+  - docs/content/week-04/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/test/**
+definition_of_done:
+  - Provider contract tests pass
+  - Consumer contract tests pass
+  - Contract documentation complete
+  - Week 4 capstone submitted
+validate:
+  - All contract tests pass
+  - Documentation is complete
+  - Ready for sprint work
+nav:
+  prev: week-04-lab-02
+  home: .MASTER_BOOTCAMP.md
+  next: sprint-01-step-00

@@ -1,0 +1,67 @@
+name: Update Dashboard
+
+on:
+  schedule:
+    # Run daily at 6:00 AM UTC
+    - cron: '0 6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'progress/cohorts/**'
+  workflow_dispatch:
+    inputs:
+      cohort:
+        description: 'Specific cohort to update (leave empty for all)'
+        required: false
+        default: ''
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate dashboards
+        run: |
+          if [ -n "${{ github.event.inputs.cohort }}" ]; then
+            echo "Generating dashboard for cohort: ${{ github.event.inputs.cohort }}"
+            npm run progress:dashboard -- --cohort "${{ github.event.inputs.cohort }}"
+          else
+            echo "Generating dashboards for all cohorts"
+            npm run progress:dashboard -- --all
+          fi
+
+      - name: Check alerts
+        run: |
+          if [ -n "${{ github.event.inputs.cohort }}" ]; then
+            npm run progress:alerts -- --cohort "${{ github.event.inputs.cohort }}" --output
+          else
+            npm run progress:alerts -- --all --output
+          fi
+        continue-on-error: true
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update progress dashboards [skip ci]'
+          file_pattern: |
+            progress/DASHBOARD*.md
+            progress/ALERTS*.md
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_author: 'GitHub Actions <github-actions[bot]@users.noreply.github.com>'

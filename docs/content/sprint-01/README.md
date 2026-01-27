@@ -37,6 +37,7 @@ By end of sprint, the team has:
 | Sprint Packet     | ✅ Ready | [sprint-packet/SPRINT_PACKET.md](./sprint-packet/SPRINT_PACKET.md) |
 | FE Task Breakdown | ✅ Ready | [sprint-packet/FE_TASKS.md](./sprint-packet/FE_TASKS.md)           |
 | BE Task Breakdown | ✅ Ready | [sprint-packet/BE_TASKS.md](./sprint-packet/BE_TASKS.md)           |
+| FAQ               | ✅ Ready | [FAQ.md](./FAQ.md)                                                 |
 
 ---
 

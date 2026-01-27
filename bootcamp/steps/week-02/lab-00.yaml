@@ -1,0 +1,19 @@
+id: week-02-lab-00
+title: "Lab 0: Week 2 Setup"
+timebox: "15 minutes"
+objective: "Review Week 1 and prepare for Constraint Register work."
+read:
+  - docs/content/week-02/README.md
+touch:
+  - working/{frontend|backend}/{your_name}_{timestamp}/README.md
+definition_of_done:
+  - Week 1 labs completed
+  - Week 2 materials reviewed
+  - Working folder updated for Week 2
+validate:
+  - Previous week's work submitted
+  - New working folder created
+nav:
+  prev: week-01-lab-06
+  home: .MASTER_BOOTCAMP.md
+  next: week-02-lab-01

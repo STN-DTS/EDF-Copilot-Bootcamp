@@ -15,6 +15,7 @@
 | [sprint-packet/FE_TASKS.md](./sprint-packet/FE_TASKS.md)           | Frontend task breakdown  | ✅ Complete |
 | [sprint-packet/BE_TASKS.md](./sprint-packet/BE_TASKS.md)           | Backend task breakdown   | ✅ Complete |
 | [sprint-packet/NFR_CHECKLIST.md](./sprint-packet/NFR_CHECKLIST.md) | NFR verification         | ✅ Complete |
+| [FAQ.md](./FAQ.md)                                                 | Common questions         | ✅ Complete |
 
 ---
 

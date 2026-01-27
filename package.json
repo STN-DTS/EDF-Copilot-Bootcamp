@@ -1,0 +1,23 @@
+{
+  "name": "edf-copilot-bootcamp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "EDF Copilot Bootcamp - AI-assisted development training",
+  "scripts": {
+    "bootcamp": "node scripts/bootcamp.mjs",
+    "bootcamp:list": "node scripts/bootcamp.mjs list",
+    "bootcamp:help": "node scripts/bootcamp.mjs help",
+    "check:links": "npx markdown-link-check **/*.md --config .github/markdown-link-check-config.json",
+    "progress:init": "node progress/scripts/init-student.mjs",
+    "progress:start": "node progress/scripts/update-progress.mjs start",
+    "progress:complete": "node progress/scripts/update-progress.mjs complete",
+    "progress:blocked": "node progress/scripts/update-progress.mjs blocked",
+    "progress:view": "node progress/scripts/update-progress.mjs view",
+    "progress:dashboard": "node progress/scripts/generate-dashboard.mjs",
+    "progress:alerts": "node progress/scripts/check-alerts.mjs"
+  },
+  "devDependencies": {
+    "yaml": "^2.3.0",
+    "markdown-link-check": "^3.11.0"
+  }
+}
