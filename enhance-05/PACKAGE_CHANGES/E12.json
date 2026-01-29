@@ -1,0 +1,32 @@
+{
+  "agent": "E12_RUNNER_PROGRESS",
+  "description": "Convenience scripts for integrated bootcamp runner with progress tracking",
+  "scripts": {
+    "bootcamp:start": {
+      "command": "node scripts/bootcamp.mjs step",
+      "description": "Start a lab step and optionally mark progress (add --mark-started <user> --cohort <id>)",
+      "examples": [
+        "npm run bootcamp:start -- week-01-lab-02",
+        "npm run bootcamp:start -- week-01-lab-02 --mark-started jsmith --cohort 2026-01"
+      ]
+    },
+    "bootcamp:finish": {
+      "command": "node scripts/bootcamp.mjs step",
+      "description": "Complete a lab step and mark progress (add --mark-complete <user> --cohort <id> [--pr <num>])",
+      "examples": [
+        "npm run bootcamp:finish -- week-01-lab-02 --mark-complete jsmith --cohort 2026-01 --pr 42"
+      ]
+    }
+  },
+  "packageJsonAdditions": {
+    "bootcamp:start": "node scripts/bootcamp.mjs step",
+    "bootcamp:finish": "node scripts/bootcamp.mjs step"
+  },
+  "rationale": "These scripts provide semantic aliases that make the intent clearer. 'bootcamp:start' suggests beginning work on a lab, while 'bootcamp:finish' suggests completing it. Both use the same underlying 'step' command but with different expected flag combinations.",
+  "integrationNotes": [
+    "The bootcamp:start and bootcamp:finish scripts are aliases for convenience",
+    "Actual progress tracking requires --mark-started/--mark-complete flags",
+    "Cohort flag is mandatory when using mark flags",
+    "PR number is optional but recommended with --mark-complete"
+  ]
+}

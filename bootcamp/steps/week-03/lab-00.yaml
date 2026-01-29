@@ -2,8 +2,13 @@ id: week-03-lab-00
 title: "Lab 0: Week 3 Setup"
 timebox: "15 minutes"
 objective: "Review Week 2 and prepare for Spec-First Packaging."
+prerequisites:
+  - week-02-lab-03: "Constraint-aware implementation completed"
+  - week-01-lab-01: "Planning patterns (used throughout)"
 read:
   - docs/content/week-03/README.md
+  # Tie-backs
+  - docs/shared/reference-materials/DOMAIN_CONTEXT.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/README.md
 definition_of_done:

@@ -1,0 +1,64 @@
+# E13_BACKUP_RESTORE Complete
+
+**Agent:** E13_BACKUP_RESTORE
+**Completed:** 2026-01-29T12:00:00Z
+
+## Files Created
+
+| File | Status | Description |
+|------|--------|-------------|
+| `progress/scripts/backup-cohort.mjs` | ✅ Created | Main backup/restore script |
+| `progress/backups/.gitkeep` | ✅ Created | Directory placeholder |
+| `progress/backups/README.md` | ✅ Created | Documentation |
+| `enhance-05/PACKAGE_CHANGES/E13.json` | ✅ Created | Package script additions |
+
+## Features Implemented
+
+### Commands
+- `backup` - Create timestamped .tar.gz backup
+- `list` - List available backups with metadata
+- `restore` - Restore from specific date backup
+
+### Options
+- `--cohort, -c <id>` - Required cohort identifier
+- `--date, -d <YYYY-MM-DD>` - Date for restore operations
+- `--help, -h` - Show help message
+
+### Backup System Features
+- ✅ Timestamped backups in `progress/backups/{cohort}/`
+- ✅ Manifest JSON with file metadata
+- ✅ Automatic pruning (keeps last 10 backups)
+- ✅ Safety backup before restore
+- ✅ Colored console output
+- ✅ Cross-platform tar support
+
+## Usage Examples
+
+```bash
+# Create backup
+npm run backup:cohort -- backup --cohort 2026-01
+
+# List backups
+npm run backup:cohort -- list --cohort 2026-01
+
+# Restore from date
+npm run backup:cohort -- restore --cohort 2026-01 --date 2026-01-29
+```
+
+## Verification
+
+To verify the implementation:
+
+```bash
+# Show help
+node progress/scripts/backup-cohort.mjs --help
+
+# Create a test backup
+node progress/scripts/backup-cohort.mjs backup --cohort 2026-01
+
+# List backups
+node progress/scripts/backup-cohort.mjs list --cohort 2026-01
+```
+
+---
+**Signal:** E13_COMPLETE

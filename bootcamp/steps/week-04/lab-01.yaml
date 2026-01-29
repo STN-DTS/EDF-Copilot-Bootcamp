@@ -2,8 +2,13 @@ id: week-04-lab-01
 title: "Lab 1: Contract Definition"
 timebox: "30 minutes"
 objective: "Define API contracts before implementation."
+prerequisites:
+  - week-03-lab-01: "Specification writing skills"
+  - week-01-lab-01: "Planning before code"
 read:
   - docs/content/week-04/README.md
+  # Tie-backs
+  - docs/shared/reference-materials/PROMPT_PACK_V1.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/api/**
 definition_of_done:

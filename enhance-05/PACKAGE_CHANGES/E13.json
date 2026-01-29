@@ -1,0 +1,39 @@
+{
+  "agentId": "E13_BACKUP_RESTORE",
+  "description": "Package.json script additions for backup-cohort functionality",
+  "scripts": {
+    "backup:cohort": "node progress/scripts/backup-cohort.mjs",
+    "backup:create": "node progress/scripts/backup-cohort.mjs backup",
+    "backup:list": "node progress/scripts/backup-cohort.mjs list",
+    "backup:restore": "node progress/scripts/backup-cohort.mjs restore"
+  },
+  "usage": {
+    "backup:cohort": {
+      "description": "Run backup-cohort script with any command",
+      "examples": [
+        "npm run backup:cohort -- backup --cohort 2026-01",
+        "npm run backup:cohort -- list --cohort 2026-01",
+        "npm run backup:cohort -- restore --cohort 2026-01 --date 2026-01-29"
+      ]
+    },
+    "backup:create": {
+      "description": "Shortcut to create a backup",
+      "examples": [
+        "npm run backup:create -- --cohort 2026-01"
+      ]
+    },
+    "backup:list": {
+      "description": "Shortcut to list backups",
+      "examples": [
+        "npm run backup:list -- --cohort 2026-01"
+      ]
+    },
+    "backup:restore": {
+      "description": "Shortcut to restore from backup",
+      "examples": [
+        "npm run backup:restore -- --cohort 2026-01 --date 2026-01-29"
+      ]
+    }
+  },
+  "mergeInstructions": "Add all scripts from the 'scripts' object to package.json scripts section"
+}

@@ -2,8 +2,14 @@ id: week-04-lab-03
 title: "Lab 3: Contract Testing"
 timebox: "40 minutes"
 objective: "Comprehensive contract testing and validation."
+prerequisites:
+  - week-01-lab-03: "TDD skills (tests first)"
+  - week-01-lab-06: "Capstone (all Week 1 skills applied)"
 read:
   - docs/content/week-04/README.md
+  # Tie-backs: Testing foundations
+  - .github/instructions/testing.instructions.md
+  - docs/shared/reference-materials/DEFINITION_OF_DONE.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/test/**
 definition_of_done:

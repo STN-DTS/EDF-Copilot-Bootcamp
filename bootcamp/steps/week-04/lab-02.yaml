@@ -2,8 +2,15 @@ id: week-04-lab-02
 title: "Lab 2: Contract-First Implementation"
 timebox: "35 minutes"
 objective: "Implement API to match the defined contract exactly."
+prerequisites:
+  - week-01-lab-02: "Vertical slice scaffolding"
+  - week-01-lab-03: "TDD workflow"
+  - week-02-lab-03: "Constraint-aware implementation"
 read:
   - docs/content/week-04/README.md
+  # Tie-backs: Implementation patterns
+  - .github/instructions/backend.instructions.md
+  - .github/instructions/testing.instructions.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/src/**
 definition_of_done:

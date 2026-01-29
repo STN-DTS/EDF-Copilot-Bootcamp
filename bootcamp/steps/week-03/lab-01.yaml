@@ -2,8 +2,13 @@ id: week-03-lab-01
 title: "Lab 1: Specification Writing"
 timebox: "30 minutes"
 objective: "Write clear specifications before implementation."
+prerequisites:
+  - week-01-lab-01: "Planning before code (same discipline)"
+  - week-02-lab-01: "Constraint identification (specs honor constraints)"
 read:
   - docs/content/week-03/README.md
+  # Week 1 tie-back: Planning discipline
+  - docs/shared/reference-materials/PROMPT_PACK_V1.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/SPEC.md
 definition_of_done:

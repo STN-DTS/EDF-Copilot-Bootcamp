@@ -1,0 +1,18 @@
+AGENT: E12_RUNNER_PROGRESS
+STATUS: COMPLETE
+TIMESTAMP: 2026-01-29T12:00:00Z
+
+FILES_MODIFIED:
+- scripts/bootcamp.mjs
+
+FILES_CREATED:
+- enhance-05/PACKAGE_CHANGES/E12.json
+- enhance-05/WORK_PRODUCTS/E12_RUNNER_PROGRESS_WORKLOG.md
+- enhance-05/WORK_PRODUCTS/SIGNALS/E12_COMPLETE.signal
+
+INTEGRATION_SUMMARY:
+Added --mark-started, --mark-complete, --cohort, --pr flags to bootcamp.mjs step command.
+Integration calls progress/scripts/update-progress.mjs via child_process.execSync.
+Help text updated with new flags and examples.
+
+VERIFICATION_STATUS: READY_FOR_TESTING

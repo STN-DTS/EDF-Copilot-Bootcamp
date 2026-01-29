@@ -2,8 +2,12 @@ id: week-02-lab-01
 title: "Lab 1: Constraint Identification"
 timebox: "30 minutes"
 objective: "Identify and document project constraints with Copilot assistance."
+prerequisites:
+  - week-01-lab-01: "Planning skill (create structured documents)"
 read:
   - docs/content/week-02/README.md
+  # Week 1 tie-back: Planning patterns
+  - docs/content/week-01/micro-labs/LAB_1_PLAN_ONLY.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/CONSTRAINTS.md
 definition_of_done:

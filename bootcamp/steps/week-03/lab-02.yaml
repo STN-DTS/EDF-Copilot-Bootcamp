@@ -2,8 +2,14 @@ id: week-03-lab-02
 title: "Lab 2: Spec-Driven Generation"
 timebox: "35 minutes"
 objective: "Generate code from specifications using Copilot."
+prerequisites:
+  - week-01-lab-02: "Vertical slice scaffolding patterns"
+  - week-01-lab-03: "TDD (tests verify spec compliance)"
 read:
   - docs/content/week-03/README.md
+  # Week 1 tie-backs
+  - .github/instructions/backend.instructions.md
+  - .github/instructions/frontend.instructions.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/src/**
 definition_of_done:

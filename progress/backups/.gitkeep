@@ -1,0 +1,2 @@
+# Placeholder to ensure backups folder is tracked by git
+# Actual backup files (*.tar.gz) should be gitignored

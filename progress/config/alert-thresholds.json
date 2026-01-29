@@ -1,0 +1,45 @@
+{
+  "stuckDays": 3,
+  "inactiveDays": 7,
+  "longRunningLabDays": 5,
+  "cohortDeadlineWarnDays": 14,
+  "cohortDeadlineCritDays": 7,
+  "excludeWeekends": true,
+  "holidays": [],
+  "alertTypes": {
+    "BLOCKED": {
+      "icon": "🔴",
+      "severity": "high",
+      "description": "Student has an item with BLOCKED status"
+    },
+    "STUCK": {
+      "icon": "⏳",
+      "severity": "medium",
+      "description": "Student in-progress on same item beyond threshold"
+    },
+    "INACTIVE": {
+      "icon": "💤",
+      "severity": "medium",
+      "description": "No progress file update within threshold"
+    },
+    "LONG_RUNNING": {
+      "icon": "🐌",
+      "severity": "low",
+      "description": "Lab taking longer than expected duration"
+    },
+    "DEADLINE_WARNING": {
+      "icon": "⚠️",
+      "severity": "medium",
+      "description": "Cohort deadline approaching within warning threshold"
+    },
+    "DEADLINE_CRITICAL": {
+      "icon": "🔥",
+      "severity": "high",
+      "description": "Cohort deadline approaching within critical threshold"
+    }
+  },
+  "cohortDeadlines": {
+    "_example": "2026-03-31",
+    "_comment": "Add cohort deadlines here in YYYY-MM: YYYY-MM-DD format"
+  }
+}

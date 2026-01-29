@@ -2,8 +2,14 @@ id: week-02-lab-03
 title: "Lab 3: Constraint-Aware Implementation"
 timebox: "40 minutes"
 objective: "Implement features with constraints actively guiding decisions."
+prerequisites:
+  - week-01-lab-02: "Vertical slice scaffolding"
+  - week-01-lab-03: "TDD approach"
 read:
   - docs/content/week-02/README.md
+  # Week 1 tie-backs: Implementation patterns
+  - .github/instructions/backend.instructions.md
+  - .github/instructions/testing.instructions.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/src/**
 definition_of_done:

@@ -2,8 +2,12 @@ id: week-02-lab-00
 title: "Lab 0: Week 2 Setup"
 timebox: "15 minutes"
 objective: "Review Week 1 and prepare for Constraint Register work."
+prerequisites:
+  - week-01-lab-06: "Capstone completed (all Week 1 skills)"
 read:
   - docs/content/week-02/README.md
+  # Week 1 tie-backs
+  - docs/shared/reference-materials/PROMPT_PACK_V1.md
 touch:
   - working/{frontend|backend}/{your_name}_{timestamp}/README.md
 definition_of_done:
